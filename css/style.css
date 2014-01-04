@@ -1,0 +1,12 @@
+/* Don't let the navbar overlap with the content */
+body { padding-top: 40px; }
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
+}
+
+#home-content { padding-top: 50px; }
+@media screen and (max-width: 768px) {
+    #home-content { padding-top: 0px; }
+}
+
+#footer { text-align: center; }

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+    <body>
+        {% include navbar.html %}
+        <div id="home-content" class="container">
+            <div class="row clearfix">
+                <div id="main-logo" class="col-md-4 column">
+                    <img src="/img/fullsizelogo.jpg" class="img-rounded"/>
+                </div>
+                <div class="col-md-8 column">
+                    <div class="jumbotron">
+                        <h1>Leverage the cloud</h1>
+                        <p>Apache jclouds&reg; is a cloud agnostic library for the JVM that enables developers to access a variety of supported cloud providers using one API.</p>
+                        <p><a class="btn btn-primary btn-large" href="#">Learn more!</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6 column">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Compute</h3>
+                        </div>
+                        <div class="panel-body">
+{% highlight java %}
+ComputeService compute = ContextBuilder.newBuilder("aws-ec2")
+    .credentials("identity", "credential")
+    .buildView(ComputeServiceContext.class)
+    .getComputeService();
+
+Template template = compute.templateBuilder()
+    .osFamily(OsFamily.UBUNTU)
+    .minRam(2048)
+    .options(inboundPorts(22, 80))
+    .build();
+    
+compute.createNodesInGroup("jclouds", 1, template);
+{% endhighlight %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 column">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">BlobStore</h3>
+                        </div>
+                        <div class="panel-body">
+{% highlight java %}
+BlobStore blobStore = ContextBuilder.newBuilder("aws-s3")
+    .credentials("identity", "credential")
+    .buildView(BlobStoreContext.class)
+    .getBlobStore();
+
+blobStore.createContainerInLocation(null, "mycontainer");
+
+Blob blob = blobStore.blobBuilder("blob")
+    .payload("blob-content")
+    .build();
+
+blobStore.putBlob("mycontainer", blob);
+{% endhighlight %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6 column">
+                    <div class="list-group">
+                        <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.jclouds%22" class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                <span class="glyphicon glyphicon-cloud-download"></span>
+                                Download Apache jclouds&reg;
+                            </h4>
+                            <p class="list-group-item-text">
+                                Or get the dependencies directly from Maven Central
+                            </p>
+                        </a>
+                        <a href="http://github.com/jclouds/jclouds" class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                <span class="glyphicon glyphicon-cog"></span>
+                                Browse the source code
+                            </h4>
+                            <p class="list-group-item-text">
+                                Go to the GitHub mirrors and browse the source code.
+                            </p>
+                        </a>
+                        <a href="http://github.com/jclouds/jclouds" class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                <span class="glyphicon glyphicon-globe"></span>
+                                Join the Community!
+                            </h4>
+                            <p class="list-group-item-text">
+                                Participate in the mailing lists and join the #jclouds IRC channel at Freenode
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 column">
+                    Set of images of the supported providers
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div id="footer" class="col-md-12 column">
+                    {% include footer.html %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
