@@ -1,0 +1,32 @@
+---
+layout: page
+title: Blog & News
+---
+
+{% for post in paginator.posts %}
+<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+<em>{{ post.date | date: "%-d %B %Y"}}, by {{ post.author }}</em>
+{{ post.excerpt }}
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<ul class="pagination text-center">
+    {% if paginator.previous_page %}
+        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+        <li>
+            {% if page == 1 %}
+                <a href="{{ '/blog/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+            {% else %}
+                <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+
+    {% if paginator.next_page %}
+        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
+    {% endif %}
+</ul>
+{% endif %}

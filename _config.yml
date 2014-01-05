@@ -1,3 +1,5 @@
 markdown: rdiscount
 pygments: true
 permalink: pretty
+paginate: 5
+paginate_path: "blog/page:num"
