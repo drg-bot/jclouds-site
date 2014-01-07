@@ -12,14 +12,27 @@
                     <div class="jumbotron">
                         <h1>Rule the cloud!</h1>
                         <p>Apache jclouds&reg; is a cloud agnostic library for the JVM that enables developers to access a variety of supported cloud providers using one API.</p>
-                        <p><a class="btn btn-primary btn-large" href="#">Learn more!</a></p>
+                        <p>
+                            <a class="btn btn-primary btn-large" href="#">
+                                <span class="glyphicon glyphicon-book"></span>
+                                Learn more
+                            </a>
+                            <a class="btn btn-warning btn-large" href="#">
+                                <span class="glyphicon glyphicon-download"></span>
+                                Download
+                            </a>
+                            <a class="btn btn-warning btn-large" href="#">
+                                <span class="glyphicon glyphicon-cog"></span>
+                                Source code
+                            </a>
+                            <a class="btn btn-success btn-large" href="#">
+                                <span class="glyphicon glyphicon-globe"></span>
+                                Contribute
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
-            <p class="lead text-center text-primary">
-                <strong>Cloud interfaces, simplified</strong><br/>
-                Apache jclouds&reg; provides powerful abstractions to manage your infrastructure in any cloud provider
-            </p>
             <ul class="list-inline text-center">
                 <li><img class="img-list" src="img/logos/abiquo.gif" alt="Abiquo"/></li>
                 <li><img class="img-list" src="img/logos/aws.jpg" alt="Amazon Web Services"/></li>
@@ -83,38 +96,21 @@ blobStore.putBlob("mycontainer", blob);
                 </div>
             </div>
             <div class="row clearfix">
-                <div class="col-md-6 column">
-                    <div class="list-group">
-                        <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.jclouds%22" class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                <span class="glyphicon glyphicon-cloud-download"></span>
-                                Download Apache jclouds&reg;
-                            </h4>
-                            <p class="list-group-item-text">
-                                Or get the dependencies directly from Maven Central
-                            </p>
-                        </a>
-                        <a href="http://github.com/jclouds/jclouds" class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                <span class="glyphicon glyphicon-cog"></span>
-                                Browse the source code
-                            </h4>
-                            <p class="list-group-item-text">
-                                Go to the GitHub mirrors and browse the source code.
-                            </p>
-                        </a>
-                        <a href="http://github.com/jclouds/jclouds" class="list-group-item">
-                            <h4 class="list-group-item-heading">
-                                <span class="glyphicon glyphicon-globe"></span>
-                                Join the Community!
-                            </h4>
-                            <p class="list-group-item-text">
-                                Participate in the mailing lists and join the #jclouds IRC channel at Freenode
-                            </p>
-                        </a>
-                    </div>
+                <div class="col-md-3 column">
+                    <h3 class="text-primary"><span class="glyphicon glyphicon-cog"></span>&nbsp;Compute</h3>
+                    <p>The portable Compute interface allows users to provision their infrastructure in any cloud provider. With Apache jclouds&reg; users are in control of the entire process: deployment configuration, provisioning and bootstrap.</p> 
                 </div>
-                <div class="col-md-6 column">
+                <div class="col-md-3 column">
+                    <h3 class="text-primary"><span class="glyphicon glyphicon-hdd"></span>&nbsp;BlobStore</h3>
+                    <p>Using the BlobStore interface, users can easily store objects in a wide range of blob store providers, regardless of how big the objects to manage are, or how many files are there.</p>
+                </div>
+                <div class="col-md-3 column">
+                    <h3 class="text-primary"><span class="glyphicon glyphicon-stats"></span>&nbsp;Load Balancer</h3>
+                    <p>The Load Balancer abstraction provides a common interface to configure the load balancers in any cloud that supports them. Just define the load balancer and the nodes that should join it, and it will be ready for the action.</p>
+                </div>
+                <div class="col-md-3 column">
+                    <h3 class="text-primary"><span class="glyphicon glyphicon-fire"></span>&nbsp;And many more!</h3>
+                    <p>Apache jclouds&reg; also provides DNS, firewall, storage, configuration management, provider specific APIs, a command line interface and much more. Make sure to check them out!</p>
                 </div>
             </div>
             <div class="row clearfix">
