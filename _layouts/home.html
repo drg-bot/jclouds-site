@@ -11,7 +11,7 @@
                 <div class="col-md-8 column">
                     <div class="jumbotron">
                         <h1>Rule the cloud!</h1>
-                        <p>Apache jclouds&reg; is a cloud agnostic library for the JVM that enables developers to access a variety of supported cloud providers using one API.</p>
+                        <p>Apache jclouds&reg; is a cloud agnostic library for the JVM that enables developers to access <strong>over 30 cloud providers</strong> using one API.</p>
                         <p>
                             <a class="btn btn-primary btn-large" href="#">
                                 <span class="glyphicon glyphicon-book"></span>
@@ -83,7 +83,7 @@ BlobStore blobStore = ContextBuilder.newBuilder("aws-s3")
     .buildView(BlobStoreContext.class)
     .getBlobStore();
 
-blobStore.createContainerInLocation(null, "mycontainer");
+blobStore.createContainerInLocation(location, "mycontainer");
 
 Blob blob = blobStore.blobBuilder("blob")
     .payload("blob-content")
@@ -109,8 +109,8 @@ blobStore.putBlob("mycontainer", blob);
                     <p>The Load Balancer abstraction provides a common interface to configure the load balancers in any cloud that supports them. Just define the load balancer and the nodes that should join it, and it will be ready for the action.</p>
                 </div>
                 <div class="col-md-3 column">
-                    <h3 class="text-primary"><span class="glyphicon glyphicon-fire"></span>&nbsp;And many more!</h3>
-                    <p>Apache jclouds&reg; also provides DNS, firewall, storage, configuration management, provider specific APIs, a command line interface and much more. Make sure to check them out!</p>
+                    <h3 class="text-primary"><span class="glyphicon glyphicon-fire"></span>&nbsp;Specific APIs</h3>
+                    <p>Apache jclouds&reg; also provides DNS, firewall, storage, configuration management, image management, provider specific APIs, and much more. Make sure to check them out!</p>
                 </div>
             </div>
             <div class="row clearfix">
