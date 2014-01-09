@@ -45,12 +45,7 @@ If you want to use the bleeding edge release of jclouds, you'll need to setup a 
 <dependencies>
     <dependency>
         <groupId>org.apache.jclouds</groupId>
-        <artifactId>jclouds-allcompute</artifactId>
-    <version>1.8.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.jclouds</groupId>
-        <artifactId>jclouds-allblobstore</artifactId>
+        <artifactId>jclouds-all</artifactId>
         <version>1.8.0-SNAPSHOT</version>
     </dependency>
 </dependencies>
@@ -75,8 +70,7 @@ You can add jclouds to your *project.clj* like below, supporting clojure 1.2 and
 :dependencies [[org.clojure/clojure "1.3.0"]
                [org.clojure/core.incubator "0.1.0"]
                [org.clojure/tools.logging "0.2.3"]
-               [org.apache.jclouds/jclouds-allcompute "1.7.0"]
-               [org.apache.jclouds/jclouds-allblobstore "1.7.0"]]
+               [org.apache.jclouds/jclouds-all "1.7.0"]]
 {% endhighlight %}
 
 ### Using the daily builds
@@ -87,8 +81,7 @@ You can add jclouds snapshots to your *project.clj* like below:
   :dependencies [[org.clojure/clojure "1.3.0"]
                  [org.clojure/core.incubator "0.1.0"]
                  [org.clojure/tools.logging "0.2.3"]
-                 [org.apache.jclouds/jclouds-allcompute "1.8.0-SNAPSHOT"]
-                 [org.apache.jclouds/jclouds-allblobstore "1.8.0-SNAPSHOT"]]
+                 [org.apache.jclouds/jclouds-all "1.8.0-SNAPSHOT"]]
   :repositories { "jclouds-snapshot" "https://repository.apache.org/content/repositories/snapshots"}
 {% endhighlight %}
 
@@ -189,7 +182,7 @@ with
 {% capture m %}
 ## Download the last version
 
-Last version can be downloaded from one of the [Apache mirrors](http://www.apache.org/dyn/closer.cgi/jclouds)
+Last version can be downloaded from one of the [Apache mirrors](http://www.apache.org/dyn/closer.cgi/jclouds).
 {% endcapture %}
 {{ m | markdownify }}
 </div>
