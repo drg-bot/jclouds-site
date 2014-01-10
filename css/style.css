@@ -14,3 +14,15 @@ body { padding-top: 40px; }
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.section-divider { 
+    background: url('../img/used-by-bg.png') 0 7px repeat-x; 
+    text-align: center; 
+}
+
+.section-divider .text { 
+    display: inline-block; 
+    padding: 0 20px; 
+    background: white; 
+    font-weight: bold;
+}
