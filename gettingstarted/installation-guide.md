@@ -16,16 +16,28 @@ title: Installation Guide
 {% capture m %}
 ## Maven configuration
 
-If your project is managed using Apache Maven, then it is very easy to use the jclouds, just add the following your project's *pom.xml*:
+It is very easy to install jclouds using Apache Maven. If you're new to Maven, read <a href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven in 5 Minutes</a>.
+
+If you do not have a *pom.xml* file, you can copy and paste the one below. If your project already has a *pom.xml* file, just add the dependency section below into it. 
 
 {% highlight xml %}
-<dependencies>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <jclouds.version>1.7.0</jclouds.version>
+  </properties>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <dependencies>
     <dependency>
         <groupId>org.apache.jclouds</groupId>
         <artifactId>jclouds-all</artifactId>
-        <version>1.7.0</version>
+        <version>${jclouds.version}</version>
       </dependency>
-</dependencies>
+  </dependencies>
+</project>
 {% endhighlight %}
 
 ### Using the daily builds
@@ -53,7 +65,7 @@ If you want to use the bleeding edge release of jclouds, you'll need to setup a 
 
 ### Download the binaries
     
-* Create a *pom.xml* file with dependencies you need (ex. org.apache.jclouds/jclouds-all) and the snapshot repository, if you want snapshot version (ex. 1.8.0-SNAPSHOT).
+* Create a *pom.xml* file like the one in the <a href="#maven">Maven Configuration</a> section above.
 * Execute `mvn dependency:copy-dependencies`.
 * You'll notice a new directory **target/dependency** with all the jars you need.
 {% endcapture %}
