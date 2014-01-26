@@ -1,10 +1,7 @@
 ---
-layout: jclouds
+layout: page
 title: Release Notes Beta 8
 ---
-
-# Release Notes: jclouds Beta 8
-
 
 ## Introduction
 

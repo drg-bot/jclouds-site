@@ -1,9 +1,7 @@
 ---
-layout: jclouds
+layout: page
 title: Release Notes - Beta 7
 ---
-
-# Release Notes: jclouds Beta 7
 
 There is 4 months solid effort in jclouds 1.0-beta-7 release. [65 issues](http://code.google.com/p/jclouds/issues/list?can=1&q=label%3AMilestone-1.0-beta-7) 
 were addressed.  
