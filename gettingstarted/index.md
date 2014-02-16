@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Getting started with Apache jclouds&reg;
+title: Getting Started with Apache jclouds&reg;
 ---
 
 ### [What is jclouds?](/gettingstarted/what-is-jclouds/)
