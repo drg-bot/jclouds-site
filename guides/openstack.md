@@ -41,16 +41,48 @@ Because the OpenStack API is also open, the jclouds APIs that talk to private Op
 ## <a id="terminology"></a>Terminology
 There are some differences in terminology between jclouds and OpenStack that should be made clear.
 
-| jclouds | OpenStack |
-|---------|---------------------|
-| Compute | Nova
-| Node | Server
-| Location/Zone | Region
-| Hardware | Flavor
-| NodeMetadata | Server details
-| UserMetadata | Metadata
-| BlobStore | Swift
-| Blob | File
+<table class="table table-condensed table-striped table-hover">
+  <thead>
+    <tr>
+      <th>jclouds</th>
+      <th>OpenStack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Compute</td>
+      <td>Nova</td>
+    </tr>    
+    <tr>
+      <td>Node</td>
+      <td>Server</td>
+    </tr>    
+    <tr>
+      <td>Location/Zone</td>
+      <td>Region</td>
+    </tr>    
+    <tr>
+      <td>Hardware</td>
+      <td>Flavor</td>
+    </tr>    
+    <tr>
+      <td>NodeMetadata</td>
+      <td>Server details</td>
+    </tr>    
+    <tr>
+      <td>UserMetadata</td>
+      <td>Metadata</td>
+    </tr>    
+    <tr>
+      <td>BlobStore</td>
+      <td>Swift</td>
+    </tr>    
+    <tr>
+      <td>Blob</td>
+      <td>File</td>
+    </tr>    
+  </tbody>
+</table>
 
 ## <a id="nova"></a>List Servers
 ### <a id="nova-intro"></a>Introduction
@@ -326,12 +358,11 @@ private void init() {
 * Have a look at how the optional extensions are handled (hint: see [FloatingIPApiLiveTest.testListFloatingIPs()](https://github.com/jclouds/jclouds/blob/master/apis/openstack-nova/src/test/java/org/jclouds/openstack/nova/v2_0/extensions/FloatingIPApiLiveTest.java#L42)).
 * Change the example to do different things that you want to do.
 * Browse the [documentation](/documentation) and have a look at the [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
-* Return to the [Installation Guide](/documentation/userguide/installation-guide) and have a look at the different ways to integrate jclouds with your project.
-* Join the [jclouds community](/documentation/community) as either a developer or user. 
+* Join the [jclouds community](/community/) as either a developer or user. 
 
 ## <a id="pom"></a>OpenStack Dependencies
 
-This pom.xml file specifies all of the dependencies you'll need to work with OpenStack. Replace the jclouds.version X.X.X with the latest version available according to the [Release Notes](http://jclouds.apache.org/documentation/releasenotes/).
+This pom.xml file specifies all of the dependencies you'll need to work with OpenStack. Replace the jclouds.version X.X.X with the latest version available according to the [Release Notes](/releasenotes/).
 
 {% highlight xml %}
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

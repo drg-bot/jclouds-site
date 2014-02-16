@@ -50,16 +50,48 @@ Likewise you can go to the [Rackspace Cloud (UK)](https://buyonline.rackspace.co
 ## <a id="terminology"></a>Terminology
 There are some differences in terminology between jclouds and Rackspace/OpenStack that should be made clear.
 
-| jclouds | Rackspace/OpenStack |
-|---------|---------------------|
-| Compute | Cloud Servers (Nova)
-| Node | Server
-| Location/Zone | Region
-| Hardware | Flavor
-| NodeMetadata | Server details
-| UserMetadata | Metadata
-| BlobStore | Cloud Files (Swift)
-| Blob | File (Object)
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>jclouds</th>
+      <th>Rackspace (OpenStack)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Compute</td>
+      <td>Cloud Servers (Nova)</td>
+    </tr>    
+    <tr>
+      <td>Node</td>
+      <td>Server</td>
+    </tr>    
+    <tr>
+      <td>Location/Zone</td>
+      <td>Region</td>
+    </tr>    
+    <tr>
+      <td>Hardware</td>
+      <td>Flavor</td>
+    </tr>    
+    <tr>
+      <td>NodeMetadata</td>
+      <td>Server details</td>
+    </tr>    
+    <tr>
+      <td>UserMetadata</td>
+      <td>Metadata</td>
+    </tr>    
+    <tr>
+      <td>BlobStore</td>
+      <td>Cloud Files (Swift)</td>
+    </tr>    
+    <tr>
+      <td>Blob</td>
+      <td>File (Object)</td>
+    </tr>    
+  </tbody>
+</table>
 
 ## <a id="files"></a>Your First Cloud Files App
 ### <a id="files-intro"></a>Introduction
