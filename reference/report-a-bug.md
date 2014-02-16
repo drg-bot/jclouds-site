@@ -3,9 +3,9 @@ layout: page
 title: Report a Bug
 ---
 
-If you run into a bug while using jclouds, we encourage you to report it. To help you please collect as much of the following information as possible. If you can't get everything, that's okay. Send what you can.
+If you run into a bug while using jclouds, we encourage you to report it. To help us help you, please collect as much of the following information as possible. If you can't get everything, that's okay. Send what you can.
 
-Bugs can be reported in [JIRA](https://issues.apache.org/jira/browse/JCLOUDS) or the [jclouds user mailing list](/documentation/community).
+Bugs can be reported in [JIRA](https://issues.apache.org/jira/browse/JCLOUDS) or the [jclouds user mailing list](/community/).
 
 1. [jclouds Version](#jclouds-version)
 1. [Cloud and API Version](#cloud-version)
@@ -41,46 +41,7 @@ e.g. java version "1.7.0_51"
 
 ## <a id="logs"></a>Logs
 
-Sending us the stack trace from the exception is helpful but often the root cause of the problem can be revealed by examining what's being sent over the wire.
-
-### Get Logging
-
-[SLF4J](http://www.slf4j.org/) is the logging facade for jclouds. To use SLF4J you need the jclouds-slf4j-X.X.X.jar and the implementation logback-*.jar ([download](http://logback.qos.ch/download.html)) files on your classpath. To get them via Maven add the following dependencies to your pom.xml file.
-
-{% highlight xml %}
-<dependencies>
-  <dependency>
-    <groupId>org.apache.jclouds.driver</groupId>
-    <artifactId>jclouds-slf4j</artifactId>
-    <version>${jclouds.version}</version>
-  </dependency>
-  <dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.0.13</version>
-  </dependency>
-</dependencies>
-{% endhighlight %}
-
-### Configure Logging
-
-You'll also need a logback.xml ([example](https://github.com/jclouds/jclouds/blob/master/compute/src/test/resources/logback.xml)) configuration file on your classpath. The file jclouds-wire.log is what we need.
-
-### Enable Logging
-
-Here is some example code of how to enable your components to use SLF4J:
-
-{% highlight java %}
-Iterable<Module> modules = ImmutableSet.<Module> of(
-    new SLF4JLoggingModule());
-
-ComputeServiceContext context = ContextBuilder.newBuilder("a-compute-provider")
-    .credentials("myUsername", "myPasswordOrApiKey")
-    .modules(modules)
-    .buildView(ComputeServiceContext.class);
-{% endhighlight %}
-
-### Send Logs
+Sending us the stack trace from the exception is helpful but often the root cause of the problem can be revealed by examining what's being sent over the wire. Please read [Logging](/reference/logging/) to install, configure, and enable logging.
 
 If you are reporting the bug in JIRA, you can simply attach the jclouds-wire.log and other logs to the issue. If you are sending the report to the user mailing list, please put the logs into a [gist](https://gist.github.com/) or [pastie](http://pastie.org/) and include the link in the email.
 
