@@ -10,11 +10,11 @@ title: "Azure Storage Service: Getting Started Guide"
 	* Enter a project label and click Next.
 	* Enter the same name for the Storage Account Name. Make sure the account is available and then click _Create_
 		* This is your account in jclouds.
-	* Under the main azure screen, you should see Cloud Storage and the service you setup; Click on that. 
+	* Under the main azure screen, you should see Cloud Storage and the service you setup; Click on that.
 		* Primary Access Key is the key you use in jclouds
 3. Ensure you are using a recent JDK 6
 4. Setup your project to include `azureblob`
-	* Get the dependency `org.jclouds.provider/azureblob` using jclouds [Installation](/documentation/userguide/installation-guide).
+	* Get the dependency `org.jclouds.provider/azureblob` using jclouds [Installation](/gettingstarted/installation-guide).
 5. Start coding
 
 {% highlight java %}

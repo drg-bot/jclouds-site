@@ -5,7 +5,7 @@ title: Report a Bug
 
 If you run into a bug while using jclouds, we encourage you to report it. To help us help you, please collect as much of the following information as possible. If you can't get everything, that's okay. Send what you can.
 
-Bugs can be reported in [JIRA](https://issues.apache.org/jira/browse/JCLOUDS) or the [jclouds user mailing list](/community/).
+Bugs can be reported in [JIRA](https://issues.apache.org/jira/browse/JCLOUDS) or via the [jclouds user mailing list](/community/).
 
 1. [jclouds Version](#jclouds-version)
 1. [Cloud and API Version](#cloud-version)
@@ -47,9 +47,11 @@ If you are reporting the bug in JIRA, you can simply attach the jclouds-wire.log
 
 ## <a id="code"></a>Code
 
-If you can isolate the problem within a single Java file, send us that file so we can attempt to immediately reproduce the error. If you can't isolate the problem, send us as large a code snippet as possible around the problem code. 
+If you can isolate the problem within a single Java file, send us that file so we can attempt to immediately reproduce the error. If you can't isolate the problem, send us as large a code snippet as possible around the problem code.
 
 If you are reporting the bug in JIRA, you can simply attach the code to the issue. If you are sending the report to the user mailing list, please put the code into a [gist](https://gist.github.com/) or [pastie](http://pastie.org/) and include the link in the email.
+
+Please remember to __remove all credentials and other sensitive information__ from anything you share!
 
 ## <a id="doc"></a>Documentation
 

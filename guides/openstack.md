@@ -16,17 +16,17 @@ title: "OpenStack: Getting Started Guide"
 [OpenStack](http://www.openstack.org/) is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds. The project aims to deliver solutions for all types of clouds by being simple to implement, massively scalable, and feature rich. The technology consists of a series of interrelated projects delivering various components for a cloud infrastructure solution.
 
 ## <a id="openstack"></a>Get OpenStack
-You can either install a private OpenStack cloud for yourself or use an existing OpenStack public cloud. 
+You can either install a private OpenStack cloud for yourself or use an existing OpenStack public cloud.
 
 ### <a id="clouds"></a>Public Clouds
-Because the OpenStack API is also open, the jclouds APIs that talk to private OpenStack clouds work just as well with public OpenStack clouds. OpenStack is used by several large public clouds, both the [HP Cloud](https://www.hpcloud.com/) and [Rackspace Cloud](http://www.rackspace.com/cloud/) are based on it. If you don't want to sign up for a paid public cloud, you can use [TryStack](http://trystack.org/).
+Because the OpenStack API is also open, the jclouds APIs that talk to private OpenStack clouds work just as well with public OpenStack clouds. OpenStack is used by several large public clouds, both the [HP Cloud](https://www.hpcloud.com/) ([HP Cloud Getting Started Guide](/guides/hpcloud)) and [Rackspace Cloud](http://www.rackspace.com/cloud/) ([Rackspace Getting Started Guide](/guides/rackspace)) are based on it. If you don't want to sign up for a paid public cloud, you can use [TryStack](http://trystack.org/).
 
 ## <a id="install"></a>Get jclouds
 
 1. Ensure you are using the [Java Development Kit (JDK) version 6 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-    * `javac -version` 
+    * `javac -version`
 1. Ensure you are using [Maven version 3 or later](http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
-    * `mvn -version` 
+    * `mvn -version`
 1. Create a directory to try out jclouds.
     * `mkdir jclouds`
     * `cd jclouds`
@@ -41,48 +41,52 @@ Because the OpenStack API is also open, the jclouds APIs that talk to private Op
 ## <a id="terminology"></a>Terminology
 There are some differences in terminology between jclouds and OpenStack that should be made clear.
 
-<table class="table table-condensed table-striped table-hover">
-  <thead>
-    <tr>
-      <th>jclouds</th>
-      <th>OpenStack</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Compute</td>
-      <td>Nova</td>
-    </tr>    
-    <tr>
-      <td>Node</td>
-      <td>Server</td>
-    </tr>    
-    <tr>
-      <td>Location/Zone</td>
-      <td>Region</td>
-    </tr>    
-    <tr>
-      <td>Hardware</td>
-      <td>Flavor</td>
-    </tr>    
-    <tr>
-      <td>NodeMetadata</td>
-      <td>Server details</td>
-    </tr>    
-    <tr>
-      <td>UserMetadata</td>
-      <td>Metadata</td>
-    </tr>    
-    <tr>
-      <td>BlobStore</td>
-      <td>Swift</td>
-    </tr>    
-    <tr>
-      <td>Blob</td>
-      <td>File</td>
-    </tr>    
-  </tbody>
-</table>
+<div class="row clearfix">
+  <div class="col-md-4 column">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>jclouds</th>
+          <th>OpenStack</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Compute</td>
+          <td>Nova</td>
+        </tr>
+        <tr>
+          <td>Node</td>
+          <td>Server</td>
+        </tr>
+        <tr>
+          <td>Location/Zone</td>
+          <td>Region</td>
+        </tr>
+        <tr>
+          <td>Hardware</td>
+          <td>Flavor</td>
+        </tr>
+        <tr>
+          <td>NodeMetadata</td>
+          <td>Server details</td>
+        </tr>
+        <tr>
+          <td>UserMetadata</td>
+          <td>Metadata</td>
+        </tr>
+        <tr>
+          <td>BlobStore</td>
+          <td>Swift</td>
+        </tr>
+        <tr>
+          <td>Blob</td>
+          <td>File</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 ## <a id="nova"></a>List Servers
 ### <a id="nova-intro"></a>Introduction
@@ -102,7 +106,7 @@ There are some differences in terminology between jclouds and OpenStack that sho
 
 {% highlight java %}
 import static com.google.common.io.Closeables.closeQuietly;
-    
+
 import java.io.Closeable;
 import java.util.Set;
 
@@ -186,14 +190,14 @@ In the init() method note that
 * `.endpoint("http://172.16.0.1:5000/v2.0/")`
   * This is the Keystone endpoint that jclouds needs to connect with to get more info (services and endpoints) from OpenStack
   * When the devstack installation completes successfully, one of the last few lines will read something like "`Keystone is serving at http://172.16.0.1:5000/v2.0/`"
-  * Set the endpoint to this URL depending on the method used to get OpenStack above. 
+  * Set the endpoint to this URL depending on the method used to get OpenStack above.
 
 ### <a id="nova-compile"></a>Compile and Run
 
     javac -classpath ".:lib/*" JCloudsNova.java
-    
+
     java -classpath ".:lib/*" JCloudsNova
-    
+
     [logging output]
     Servers in RegionOne
     [logging output]
@@ -253,7 +257,7 @@ public class JCloudsSwift implements Closeable {
          jCloudsSwift.close();
       }
    }
-   
+
    private void init() {
       Iterable<Module> modules = ImmutableSet.<Module> of(
             new SLF4JLoggingModule());
@@ -289,9 +293,9 @@ public class JCloudsSwift implements Closeable {
 ### <a id="swift-compile"></a>Compile and Run
 
     javac -classpath ".:lib/*" JCloudsSwift.java
-    
+
     java -classpath ".:lib/*" JCloudsSwift
-    
+
     [logging output]
     List Containers
     [logging output]
@@ -300,20 +304,20 @@ public class JCloudsSwift implements Closeable {
 
 ## <a id="next"></a>Next Steps
 
-* Try the example above with a keystone endpoint that defines multiple storage regions. For this init() becomes: 
+* Try the example above with a keystone endpoint that defines multiple storage regions. For this init() becomes:
 
 {% highlight java %}
 private void init() {
    Iterable<Module> modules = ImmutableSet.<Module> of(new SLF4JLoggingModule());
 
    String provider = "swift-keystone"; //Region selection is limited to swift-keystone provider
-   String identity = "demo:demo"; 
-   String password = "devstack"; 
-   String endpoint = "http://keystone-endpoint.example.com/v2.0"; 
-   String region = "RegionOne"; 
+   String identity = "demo:demo";
+   String password = "devstack";
+   String endpoint = "http://keystone-endpoint.example.com/v2.0";
+   String region = "RegionOne";
 
    // If your keystone endpoint has multiple storage regions
-   // then it is recommended that you specify which region to use. 
+   // then it is recommended that you specify which region to use.
    // You can do this via the "jclouds.region" property
    Properties properties = new Properties();
    properties.setProperty(LocationConstants.PROPERTY_REGION, region);
@@ -332,7 +336,7 @@ private void init() {
 * Try the example above with one of the public clouds. For the Rackspace Cloud init() becomes:
 
 {% highlight java %}
-private void init() {    
+private void init() {
    Iterable<Module> modules = ImmutableSet.<Module> of(new SLF4JLoggingModule());
    Properties overrides = new Properties();
    overrides.setProperty(KeystoneProperties.CREDENTIAL_TYPE, CredentialTypes.PASSWORD_CREDENTIALS);
@@ -340,7 +344,7 @@ private void init() {
 
    String provider = "openstack-nova";
    String identity = "myUsername"; // userName
-   String password = "myPassword"; 
+   String password = "myPassword";
 
    ComputeServiceContext context = ContextBuilder.newBuilder(provider)
          .endpoint("https://identity.api.rackspacecloud.com/v2.0/")
@@ -357,8 +361,8 @@ private void init() {
 * Try using the `"openstack-cinder"` provider to list volumes (hint: see [VolumeAndSnapshotApiLiveTest.testListVolumes()](https://github.com/jclouds/jclouds/blob/master/apis/openstack-cinder/src/test/java/org/jclouds/openstack/cinder/v1/features/VolumeAndSnapshotApiLiveTest.java)).
 * Have a look at how the optional extensions are handled (hint: see [FloatingIPApiLiveTest.testListFloatingIPs()](https://github.com/jclouds/jclouds/blob/master/apis/openstack-nova/src/test/java/org/jclouds/openstack/nova/v2_0/extensions/FloatingIPApiLiveTest.java#L42)).
 * Change the example to do different things that you want to do.
-* Browse the [documentation](/documentation) and have a look at the [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
-* Join the [jclouds community](/community/) as either a developer or user. 
+* Browse the [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
+* Join the [jclouds community](/community/) as either a developer or user.
 
 ## <a id="pom"></a>OpenStack Dependencies
 

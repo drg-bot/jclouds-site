@@ -13,7 +13,7 @@ jclouds.relax-hostname=true
 Here are a few configuration examples of common s3 clones:
 
 ### Google Cloud Storage
-You must configure your account for [interoperable mode](https://developers.google.com/storage/docs/reference/v1/apiversion1#interoperable) and [generate HMAC keys](https://developers.google.com/storage/docs/reference/v1/getting-startedv1#keys).  Note that you must create containers via jclouds, not the web console.  Finally set these properties:
+You must configure your account for [interoperability](https://developers.google.com/storage/docs/interoperability) and [generate HMAC keys](https://developers.google.com/storage/docs/reference/v1/getting-startedv1#keys).  Note that you must create containers via jclouds, not the web console.  Finally set these properties:
 
 <pre>
 jclouds.provider=s3

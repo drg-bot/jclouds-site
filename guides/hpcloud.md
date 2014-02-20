@@ -9,7 +9,7 @@ This page helps you get started with jclouds API with
 2. Get your Account ID and Access Key by going to this [page](https://account.hpcloud.com/account/api_keys).
 3. Ensure you are using a recent version of Java 6.
 4. Setup your project to include `hpcloud-objectstorage` and `hpcloud-compute`.
-	* Get the dependencies `org.jclouds.provider/hpcloud-objectstorage` and `org.jclouds.provider/hpcloud-compute` using jclouds [Installation](/documentation/userguide/installation-guide).
+	* Get the dependencies `org.jclouds.provider/hpcloud-objectstorage` and `org.jclouds.provider/hpcloud-compute` using jclouds [Installation](/gettingstarted/installation-guide).
 5. Start coding.
 
 ** Note: The identity for hpcloud is the same now as of 1.5.0 which is "tenantName:userName" and the credential is "userPassword"
@@ -19,7 +19,7 @@ By default, the authentication mechanism for all OpenStack Keystone based APIs w
 The following specifications may serve as a guide if you wish to set API Access Keys:
 properties.setProperty(KeystoneProperties.CREDENTIAL_TYPE, CredentialTypes.API_ACCESS_KEY_CREDENTIALS)
 
-To get the CredentialTypes class, please see the [Javadoc](http://demobox.github.com/jclouds-maven-site-1.5.0/1.5.0/jclouds-multi/apidocs/org/jclouds/openstack/keystone/v2_0/config/CredentialTypes.html).
+To get the CredentialTypes class, find the CredentialTypes class in the latest [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
 
 ## HP Cloud Object Storage
 
@@ -36,7 +36,7 @@ context.getBlobStore().createContainerInLocation(null, container);
 context.createInputStreamMap(container).put("blob.txt", inputStream);
 
 // When you need access to hpcloud specific features, use the provider-specific context
-HPCloudObjectStorageClient hpcloudClient = 
+HPCloudObjectStorageClient hpcloudClient =
 	HPCloudObjectStorageClient.class.cast(context.getProviderSpecificContext().getApi());
 
 // Create a container with public access

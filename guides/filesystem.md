@@ -4,7 +4,7 @@ title: "File System: Getting Started Guide"
 ---
 
 1. Setup your project to include filesystem
-	* Get the dependency `org.jclouds.api/filesystem` using jclouds [Installation](/documentation/userguide/installation-guide).
+	* Get the dependency `org.jclouds.api/filesystem` using jclouds [Installation](/gettingstarted/installation-guide).
 2. Start coding
 
 {% highlight java %}
@@ -40,8 +40,8 @@ context.close();
 
 ### Tips & tricks
 
-  * Container is an additional subfolder appended to FilesystemConstants.PROPERTY_BASEDIR. 
+  * Container is an additional subfolder appended to FilesystemConstants.PROPERTY_BASEDIR.
 	All blobs are stored inside this folder. So its value follows common rules for allowed directory names.
-  *  Blob key represent the name of the file stored in the filesystem. It can contains path separator. 
+  *  Blob key represent the name of the file stored in the filesystem. It can contains path separator.
 	In this case, the entire directory structure is generated, starting from the container path.
 	 Also in this case, common rules for allowed file names must be followed.

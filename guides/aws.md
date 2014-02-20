@@ -7,16 +7,15 @@ This page helps you get started with `jclouds` API with Amazon Web Services
 
 1. Sign up for [Amazon Web Services Signup](https://aws-portal.amazon.com/gp/aws/developer/registration/index.html).
 2. Get your Access Key ID and Secret Access Key by going to this [page](https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&action=access-key).
-3. Ensure you are using a recent JDK 6 version. 
+3. Ensure you are using a recent JDK 6 version.
 4. Setup your project to include aws-ec2 and aws-s3.
-	* Get the dependencies `org.jclouds.provider/aws-ec2` and `org.jclouds.provider/aws-s3` using jclouds [Installation](/documentation/userguide/installation-guide).
+	* Get the dependencies `org.jclouds.provider/aws-ec2` and `org.jclouds.provider/aws-s3` using jclouds [Installation](/gettingstarted/installation-guide).
 5. Start coding
 
 ## Using S3
 
 {% highlight java %}
-import static 
-	org.jclouds.aws.s3.options.PutObjectOptions.Builder.withAcl;
+import static org.jclouds.aws.s3.options.PutObjectOptions.Builder.withAcl;
 
 // get a context with amazon that offers the portable BlobStore API
 BlobStoreContext context = ContextBuilder.newBuilder("aws-s3")

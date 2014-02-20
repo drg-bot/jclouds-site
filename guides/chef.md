@@ -3,11 +3,11 @@ layout: page
 title: "Chef: Getting Started Guide"
 ---
 
-1. Setup a Chef Server or register for [Opscode Enterprise Chef](https://getchef.opscode.com/signup).
+1. Setup a Chef Server or register for [Enterprise Chef](https://getchef.opscode.com/signup).
 2. Ensure you are using a recent JDK 6 version.
 3. Setup your project to include `chef`, or `enterprisechef`, depending on the Chef flavor you are going to connect to.
-    * Get the dependencies `org.apache.jclouds.api/chef` using jclouds [Installation](/documentation/userguide/installation-guide).
-    * Get the dependencies `org.apache.jclouds.provider/enterprisechef` using jclouds [Installation](/documentation/userguide/installation-guide).
+    * Get the dependencies `org.apache.jclouds.api/chef` using jclouds [Installation](/gettingstarted/installation-guide).
+    * Get the dependencies `org.apache.jclouds.provider/enterprisechef` using jclouds [Installation](/gettingstarted/installation-guide).
 4. Start coding
 
 ## About Enterprise Chef
@@ -17,7 +17,7 @@ The core Chef API, however, provides access to all Chef features in all Chef fla
 
 ## Using the Chef Server API
 
-You can easily access the Chef Server API to manage the different components of your Chef Server.  
+You can easily access the Chef Server API to manage the different components of your Chef Server.
 The following example shows several calls to the API and the creation of the context, so you can get an idea of how jclouds-chef works.
 
 Note that you can use `chef` or `enterprisechef` to create the context.
@@ -28,9 +28,9 @@ String organization = "organization"
 String pemFile = System.getProperty("user.home") + "/.chef/" + client + ".pem";
 String credential = Files.toString(new File(pemFile), Charsets.UTF_8);
 
-ChefContext context = ContextBuilder.newBuilder("enterprisechef") //
-    .endpoint("https://api.opscode.com/organizations/" + organization) //
-    .credentials(client, credential) //
+ChefContext context = ContextBuilder.newBuilder("enterprisechef")
+    .endpoint("https://api.opscode.com/organizations/" + organization)
+    .credentials(client, credential)
     .buildView(ChefContext.class);
 
 // The raw API has access to all chef features, as exposed in the Chef REST API
@@ -52,7 +52,7 @@ You can also combine the jclouds compute portable API with the Chef API to boots
 
 ### Relationship between compute groups and run lists
 
-Jclouds compute-chef integration is facilitated by the Chef concept of databags. We use a databag to store the relationships between Chef nodes and jclouds compute groups. By default these relationships are stored in a databag named "bootstrap", however, you can change this by adjusting the property `chef.bootstrap-databag`.  
+Jclouds compute-chef integration is facilitated by the Chef concept of databags. We use a databag to store the relationships between Chef nodes and jclouds compute groups. By default these relationships are stored in a databag named "bootstrap", however, you can change this by adjusting the property `chef.bootstrap-databag`.
 We also provide a couple of utilities to help manage the data in this special bag. The two methods are named `updateRunListForGroup` and `getRunListForGroup` in java, and `update-run-list` and `run-list` in clojure at the moment.
 
 {% highlight java %}
@@ -73,17 +73,17 @@ chefConfig.put(ChefProperties.CHEF_VALIDATOR_NAME, validator);
 chefConfig.put(ChefProperties.CHEF_VALIDATOR_CREDENTIAL, validatorCredential);
 
 // Create the connection to the Chef server
-ChefContext context = ContextBuilder.newBuilder("enterprisechef") //
-    .endpoint("https://api.opscode.com/organizations/" + organization) //
-    .credentials(client, credential) //
-    .overrides(chefConfig) //
+ChefContext context = ContextBuilder.newBuilder("enterprisechef")
+    .endpoint("https://api.opscode.com/organizations/" + organization)
+    .credentials(client, credential)
+    .overrides(chefConfig)
     .buildView(ChefContext.class);
-        
+
 // Create the connection to the compute provider. Note that ssh will be used to bootstrap chef
-ComputeServiceContext computeContext = ContextBuilder.newBuilder("<the compute provider name>") //
-    .endpoint("<the compute endpoint>") //
-    .credentials("<identity>", "<credential>") //
-    .modules(ImmutableSet.<Module> of(new SshjSshClientModule())) //
+ComputeServiceContext computeContext = ContextBuilder.newBuilder("<the compute provider name>")
+    .endpoint("<the compute endpoint>")
+    .credentials("<identity>", "<credential>")
+    .modules(ImmutableSet.<Module> of(new SshjSshClientModule()))
     .buildView(ComputeServiceContext.class);
 
 // Group all nodes in both Chef and the compute provider by this group
@@ -120,7 +120,7 @@ computeContext.close();
 
 ### What does the generated bootstrap script do?
 
-The methods named `createBootstrapScriptForGroup` in java and `create-bootstrap` in clojure do all the heavy lifting required to create a valid bootstrap script for chef.  
+The methods named `createBootstrapScriptForGroup` in java and `create-bootstrap` in clojure do all the heavy lifting required to create a valid bootstrap script for chef.
 Here is the overall process:
 
 1. Grab the run-list associated with the group from the bootstrap databag.

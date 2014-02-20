@@ -3,12 +3,10 @@ layout: page
 title: "EC2: In Depth"
 ---
 
-The compute service is implemented fully for EC2 - so you can follow the guides to using the [ComputeService API](/documentation/userguide/compute). 
+The compute service is implemented fully for EC2 - so you can follow the guides to using the [ComputeService API](/gettingstarted/compute).
 
-For credentials you will want you access key id and secret access key (don't use your user id or anything else). 
-For practical EC2 usage - you will probably want to check out [AWS Quick Start](/documentation/quickstart/aws) 
-
-If you get stuck, please consult the [Using Amazon EC2 with jclouds FAQ](/documentation/faqs/ec2-faq).
+For credentials you will want you access key id and secret access key (don't use your user id or anything else).
+For practical EC2 usage - you will probably want to check out [AWS Getting Started Guide](/guides/aws)
 
 ## Compatibility
 Private clouds often expose EC2-compatible interfaces.  Very commonly, users install clones on non-https, or self-signed servers.  If you do so, make sure you set the following properties:
@@ -18,7 +16,7 @@ jclouds.trust-all-certs=true
 jclouds.relax-hostname=true
 </pre>
 
-Here are a few configuration examples of common EC2 clones:           
+Here are a few configuration examples of common EC2 clones:
 ### Eucalyptus
 The following properties should help use the `ec2` provider on a eucalyptus install:
 
@@ -31,8 +29,8 @@ ec2.endpoint=http://host:8773/services/Eucalyptus/
 
 ## Images
 ### Default image
-The default image for version 1.0.0 is [Amazon Linux](http://aws.amazon.com/amazon-linux-ami) and 64 bit.  
-This by default chooses t1.micro size.  The m1.small instance size does not support 64 bit images, 
+The default image for version 1.0.0 is [Amazon Linux](http://aws.amazon.com/amazon-linux-ami) and 64 bit.
+This by default chooses t1.micro size.  The m1.small instance size does not support 64 bit images,
 if you need this, you'll have to revise the template:
 
 {% highlight java %}
@@ -44,8 +42,8 @@ In order to match an Ubuntu, or CentOs image, you'll need to see the Image Parsi
 
 ### Image Parsing
 
-We had feedback from one of our users that our default image list for EC2 didn't contain CentOs. 
-As you may know, parsing all images would take minutes due to the delay in calling 
+We had feedback from one of our users that our default image list for EC2 didn't contain CentOs.
+As you may know, parsing all images would take minutes due to the delay in calling
 ec2 across all 4 regions. We now by default parse images from Amazon, Canonical, Alestic, and
  RightScale. With the addition of RightScale, we now support CentOs.
 
@@ -75,7 +73,7 @@ context = ContextBuilder.newBuilder("aws-ec2")
                   .buildView(ComputeServiceContext.class);
 {% endhighlight %}
 
-#### Properties to set cluster compute images 
+#### Properties to set cluster compute images
 Cluster compute images are assigned the following default query, corresponding to the property key constant AWSEC2Constants.PROPERTY_EC2_CC_AMI_QUERY
 <pre>
 	virtualization-type=hvm;architecture=x86_64;owner-id=137112412989,099720109477;hypervisor=xen;state=available;image-type=machine;root-device-type=ebs
@@ -85,9 +83,9 @@ In order to save time, we only look for cluster compute images in regions that s
 
 ### Lazy Image Fetching
 
-By default, the ComputeService will prefetch images from Alestic, Canonical, and 
-RightScale. This allows you to query the images, which is great, 
-if you don't know what you are looking for. However, if you already know the imageId you want, this is wasteful. 
+By default, the ComputeService will prefetch images from Alestic, Canonical, and
+RightScale. This allows you to query the images, which is great,
+if you don't know what you are looking for. However, if you already know the imageId you want, this is wasteful.
 We now provide the option to lazy-fetch images, which speed-ups execution.
 
 #### Release 1.0.0 and below
@@ -139,10 +137,10 @@ Template template = context.getComputeService().templateBuilder().imageId(
 {% endhighlight %}
 
 ### Private Images
-Amazon EC2 has the concept of private-but-shared amis - images that were bundled on 
-another account, and not made public, but shared with a specified account. 
-This is useful in the consolidated billing scenario - where you have one user 
-managing image curation, and others using them (but all billed together). 
+Amazon EC2 has the concept of private-but-shared amis - images that were bundled on
+another account, and not made public, but shared with a specified account.
+This is useful in the consolidated billing scenario - where you have one user
+managing image curation, and others using them (but all billed together).
 
 This private image may not show up in listImages, and jclouds will struggle with this.
 
@@ -197,18 +195,18 @@ ComputeServiceContext context = ContextBuilder.newBuilder("aws-ec2")
                       .buildView(ComputeServiceContext.class);
 {% endhighlight %}
 
-You can then create nodes using the templateBuilder.imageId() method. 
+You can then create nodes using the templateBuilder.imageId() method.
 
 #### Parsing private images
 
-If you publish your own images, you probably would like to be able to choose 
-the latest version using templateBuilder.  For example, you might want to say 
-`templateBuilder.imageNameMatches("my-image").imageVersionMatches("1.1.0-.*").build()` 
+If you publish your own images, you probably would like to be able to choose
+the latest version using templateBuilder.  For example, you might want to say
+`templateBuilder.imageNameMatches("my-image").imageVersionMatches("1.1.0-.*").build()`
 which would pick the latest version of your image within the `1.1.0` range.
 
-Amazon EC2 does not have typed fields for things like operating system family, image version, etc.  
-In jclouds, we attempt to parse these fields from well known naming conventions.  
-However, you might not be using naming conventions we know of, so often images show up as 
+Amazon EC2 does not have typed fields for things like operating system family, image version, etc.
+In jclouds, we attempt to parse these fields from well known naming conventions.
+However, you might not be using naming conventions we know of, so often images show up as
 OsFamily.UNRECOGNIZED, with no image version.  Here's how to instruct jclouds to parse your images.
 
 #### Create a custom parser
@@ -337,25 +335,25 @@ Template template = context.getComputeService().templateBuilder().imageVersionMa
 {% endhighlight %}
 
 ## ComputeService API extensions
-Power users have requested more control over the choices jclouds ComputeService makes when provisioning nodes. 
-By default, we automatically create a security group and keypair for your nodes before launching them. 
+Power users have requested more control over the choices jclouds ComputeService makes when provisioning nodes.
+By default, we automatically create a security group and keypair for your nodes before launching them.
 We now allow you to control this a bit through extended template options.
 
 ## Spot Instances
-                                                                                                                                                                                          
-If you are using the `aws-ec2` provider, you can use spot instances via the spotPrice parameter on template options:                                                                      
+
+If you are using the `aws-ec2` provider, you can use spot instances via the spotPrice parameter on template options:
 {% highlight java %}
 options.as(AWSEC2TemplateOptions.class).spotPrice(0.3f);
-{% endhighlight %}                                                                                                                                                                                   
-AWSEC2ComputeServiceLiveTest.testExtendedOptionsAndLogin() uses the spot price option on the portable interface.                                                                          
-                                                                                                                                                                                          
-### Details                                                                                                                                                                           
+{% endhighlight %}
+AWSEC2ComputeServiceLiveTest.testExtendedOptionsAndLogin() uses the spot price option on the portable interface.
+
+### Details
 In the code, AWSEC2CreateNodesInGroupThenAddToSet actually manages creating the spot instance request.  The way jclouds manages this is that it looks for both regular reservations and a\
-so spot requests when listing nodes.  The convergence of these 2 is what you'll see in a listNodes command (AWSEC2ListNodesStrategy ex. does these multiple listings in parallel)         
-                                                                                                                                                                                          
-                                                                                                                                                                                          
+so spot requests when listing nodes.  The convergence of these 2 is what you'll see in a listNodes command (AWSEC2ListNodesStrategy ex. does these multiple listings in parallel)
+
+
 If there's an error on the parameters requesting nodes, you'll receive an HttpResponseException in the 400 range from ec2 itself.  The other condition you should be aware of is when the\
-spot request goes through, but perhaps takes longer to provision the nodes than the jclouds default timeout (jclouds.compute.timeout.node-running), something I've not seen.              
+spot request goes through, but perhaps takes longer to provision the nodes than the jclouds default timeout (jclouds.compute.timeout.node-running), something I've not seen.
 
 
 ### Security Groups
@@ -378,9 +376,9 @@ Amazon doesn't store the private key data, so if you supply an existing public k
 
 There are two ways you can tell jclouds to use your keypair for an EC2 AMI.
 
-The *preferable way* is to just pass it as Template Option. 
-If you are using an image where jclouds doesn't know the login user, you'll need to specify the 
-`option.overrideCredentialsWith` and pass along the user that's baked in. 
+The *preferable way* is to just pass it as Template Option.
+If you are using an image where jclouds doesn't know the login user, you'll need to specify the
+`option.overrideCredentialsWith` and pass along the user that's baked in.
 
 {% highlight java%}
 overrideLoginCredentialWith(your_id_rsa_string)
@@ -400,13 +398,13 @@ templateOptions.runScript(_script_). authorizePublicKey().overrideLoginCredentia
 
 Keep in mind that _authorizePublicKey()_ is redundant, if it is the same as what corresponds to the `keyPair()` option.
 
-With respect to the security group, jclouds creates a security group for you, with rules corresponding to the 
+With respect to the security group, jclouds creates a security group for you, with rules corresponding to the
 `inboundPorts()` option (defaults to open port 22), unless you use the option
 `EC2TemplateOptions.securityGroups()`.
 
 The other way is the push your credentials into the credentials store so that jClouds uses it.
 
-When a keypair is automatically created, jclouds [puts](https://github.com/jclouds/jclouds/blob/master/apis/ec2/src/main/java/org/jclouds/ec2/compute/strategy/CreateKeyPairAndSecurityGroupsAsNeededAndReturnRunOptions.java) 
+When a keypair is automatically created, jclouds [puts](https://github.com/jclouds/jclouds/blob/master/apis/ec2/src/main/java/org/jclouds/ec2/compute/strategy/CreateKeyPairAndSecurityGroupsAsNeededAndReturnRunOptions.java)
 the keypair into the Credentials Map. You can use the same option to put your credentials into the Credentials Map using the credentialStore
 
 {% highlight java %}

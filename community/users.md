@@ -3,7 +3,7 @@ layout: page
 title: Users
 ---
 
-We know folks from a good many places.  While this may just be a list of applications that use jclouds, the good people behind these applications are valuable members of our community.  
+We know folks from a good many places.  While this may just be a list of applications that use jclouds, the good people behind these applications are valuable members of our community.
 
 ##[Abiquo](http://www.abiquo.com/)##
    - uses jclouds for OpsCode Chef integration, for AWS integration, and internally to communicate the UI with the Abiquo API
@@ -19,7 +19,7 @@ We know folks from a good many places.  While this may just be a list of applica
 
 ##[Apache Karaf Cellar](http://karaf.apache.org/index/subprojects/cellar.html)##
    - uses jclouds to provide a node discovery mechanism, it currently uses a BlobStore whiteboard/blackboard pattern and it will switch to a compute based solution soon
- 
+
 ##[Apache Camel](http://camel.apache.org/jclouds.html)##
    - enables interaction with cloud provider key-value engines (blobstores) and compute services
 
@@ -36,7 +36,7 @@ We know folks from a good many places.  While this may just be a list of applica
    - orchestrates provisioning workflows over jclouds provider APIs using Scala
 
 ##[Cloudsoft Monterey](http://www.cloudsoftcorp.com/)##
-   - uses [ComputeService](/documentation/userguide/compute) to extend the Monterey overlay network across multiple public clouds
+   - uses [ComputeService](/gettingstarted/compute) to extend the Monterey overlay network across multiple public clouds
 
 ##[Cloudstore](https://cldstr.com/)##
    - uses jclouds to enable non-technical users to run web apps on EC2, Rackspace and others
@@ -66,7 +66,7 @@ We know folks from a good many places.  While this may just be a list of applica
    - uses jclouds for monitoring and provisioning cloud services from different vendors like AWS and vCloud
 
 ##[Funambol](http://www.funambol.com/)##
-   - uses [BlobStore](/documentation/userguide/blobstore-guide) to help synchronize content across multiple cloud providers or locally to disk
+   - uses [BlobStore](/gettingstarted/blobstore) to help synchronize content across multiple cloud providers or locally to disk
 
 ##[Fuse Fabric](http://fabric.fusesource.org/)##
    - uses jclouds for creating/provisioning the agents that run in the cloud
@@ -114,7 +114,7 @@ We know folks from a good many places.  While this may just be a list of applica
    - uses jclouds to provision machines, databases, and loadbalancers that compose environments
 
 ##[Omixon](http://www.omixon.com/)##
-   - uses [BlobStore](/documentation/userguide/blobstore-guide) for big data transfer and made Apache Whirr to provision Hadoop
+   - uses [BlobStore](/gettingstarted/blobstore) for big data transfer and made Apache Whirr to provision Hadoop
 
 ##[Pallet](http://palletops.com/)##
    - uses jclouds clojure to manage node counts and provision instances
@@ -129,13 +129,13 @@ We know folks from a good many places.  While this may just be a list of applica
    - uses jclouds to deploy OpenShift Flex applications to Terremark, Rackspace, and EC2
 
 ##[RunDeck integration](https://github.com/gschueler/rundeck-jclouds)##
-   - uses [ComputeService](/documentation/userguide/compute) as a resource provider for runbook automation
+   - uses [ComputeService](/gettingstarted/compute) as a resource provider for runbook automation
 
 ##[Salesforce](http://www.salesforce.com/)##
    - uses jclouds to provision servers for their automation stacks
 
 ##[SeatYourself](http://seatyourself.biz/)##
-   - uses [BlobStore](/documentation/userguide/blobstore-guide) to persist data
+   - uses [BlobStore](/gettingstarted/blobstore) to persist data
 
 ##[Twitter](http://www.twitter.com)##
    - uses jclouds infused Pallet to deploy their storm platform to standard and variable count of spot EC2 instances and Apache Whirr to set up test Cassandra clusters

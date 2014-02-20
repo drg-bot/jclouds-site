@@ -15,18 +15,18 @@ The following example will deploy a single node using the default settings confi
 
 {% highlight java %}
 // Create the context using your credentials
-ComputeServiceContext context = ContextBuilder.newBuilder("abiquo") //
-    .endpoint("<the abiquo endpoint>") //
-    .credentials("<your login>", "<your password>") //
-    .modules(ImmutableSet.<Module> of(new SshjSshClientModule())) //
+ComputeServiceContext context = ContextBuilder.newBuilder("abiquo")
+    .endpoint("<the abiquo endpoint>")
+    .credentials("<your login>", "<your password>")
+    .modules(ImmutableSet.<Module> of(new SshjSshClientModule()))
     .buildView(ComputeServiceContext.class);
 
 // Get the compute service instance
 ComputeService compute = context.getComputeService();
 
 // Select the template to deploy
-Template template = compute.templateBuilder() //
-    .imageNameMatches("Chef Server 0\\.10\\.8") //
+Template template = compute.templateBuilder()
+    .imageNameMatches("Chef Server 0\\.10\\.8")
     .build();
 
 // Create and run one node for the selected template

@@ -3,14 +3,14 @@ layout: page
 title: "Elastic Block Store: In Depth"
 ---
 
-Amazon EC2 (`aws-ec2`) and compatible apis such as Eucalyptus (`eucalyptus`) include support for 
-remountable block devices, called EBS.  In jclouds, control features for this are exposed in 3 ways: 
-hooks within ComputeService (`EC2TemplateOptions` and viewing via `NodeMetadata`), 
+Amazon EC2 (`aws-ec2`) and compatible apis such as Eucalyptus (`eucalyptus`) include support for
+remountable block devices, called EBS.  In jclouds, control features for this are exposed in 3 ways:
+hooks within ComputeService (`EC2TemplateOptions` and viewing via `NodeMetadata`),
 directly through the provider api (`ElasticBlockStoreClient`), and our clojure functions (`ebs2.clj`).
 
 
 ## ComputeService Integration
-jclouds reports current status of volume mappings inside a Node's Hardware field.  
+jclouds reports current status of volume mappings inside a Node's Hardware field.
 You can setup volume mappings with extended template options.
 
 ### Viewing the current volumes attached to a node
@@ -22,10 +22,10 @@ EBS volumes will report in the collection returned by `node.getHardware().getVol
 jclouds also has a means to setup volume mappings when you start your nodes.  Here's an example:
 
 {% highlight java %}
-template.getOptions().as(EC2TemplateOptions.class)//
+template.getOptions().as(EC2TemplateOptions.class)
         // .unmapDeviceNamed("/dev/foo)
-        .mapEphemeralDeviceToDeviceName("/dev/sdm", "ephemeral0")//
-        .mapNewVolumeToDeviceName("/dev/sdn", volumeSize, true)//
+        .mapEphemeralDeviceToDeviceName("/dev/sdm", "ephemeral0")
+        .mapNewVolumeToDeviceName("/dev/sdn", volumeSize, true)
         .mapEBSSnapshotToDeviceName("/dev/sdo", snapshot.getId(), volumeSize, true);
 {% endhighlight %}
 
@@ -45,7 +45,7 @@ Snapshot snapshot = ebsClient.createSnapshotInRegion(volume.getRegion(), volume.
 {% endhighlight %}
 
 
-## ebs2.clj 
+## ebs2.clj
 
 {% highlight clojure %}
 (use 'org.jclouds.ec2.ebs2)

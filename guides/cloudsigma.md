@@ -3,10 +3,10 @@ layout: page
 title: "Cloud Sigma: Getting Started Guide"
 ---
 
-1. Signup for [CloudSigma](https://cs.cloudsigma.com/accounts/signup/)
+1. Signup for [CloudSigma](http://www.cloudsigma.com/)
 2. Ensure you are using a recent JDK 6
 3. Setup your project to include `cloudsigma-zrh`
-	* Get the dependency `org.jclouds.provider/cloudsigma-zrh` using jclouds [Installation](/documentation/userguide/installation-guide).
+	* Get the dependency `org.jclouds.provider/cloudsigma-zrh` using jclouds [Installation](/gettingstarted/installation-guide).
 4. Start coding
 
 {% highlight java %}
@@ -34,8 +34,8 @@ boolean success =  new RetryablePredicate<DriveInfo>(Predicates.not(new DriveCla
 Server toCreate = Servers.small(name, drive.getUuid(),defaultVncPassword).mem(ramMB).cpu(mhz).build();
 ServerInfo newServer = client.createServer(toCreate);
 
-// release resources 
+// release resources
 context.close();
 {% endhighlight %}
 
-5. Validate on the [CloudSigma console](https://cs.cloudsigma.com)
+5. Run on [CloudSigma](http://www.cloudsigma.com/)
