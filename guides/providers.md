@@ -11,6 +11,8 @@ The following is the list of providers that are supported by the jclouds API.
 1. [BlobStore](#blobstore)
     1. [BlobStore Providers](#blobstore-providers)
     1. [BlobStore APIs](#blobstore-apis)
+1. [LoadBalancer](#loadbalancer) (Beta)
+    1. [LoadBalancer Providers](#loadbalancer-providers)
     
 ## <a id="compute"></a>ComputeService
 ### <a id="compute-providers"></a>Providers 
@@ -45,6 +47,16 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>CloudSigma CH</td>
             <td>cloudsigma-zrh</td>
             <td>CH-ZH</td>
+        </tr>
+        <tr>
+            <td>CloudSigma DC</td>
+            <td>cloudsigma-wdc</td>
+            <td>US-DC</td>
+        </tr>
+        <tr>
+            <td>DigitalOcean</td>
+            <td>digitalocean</td>
+            <td></td>
         </tr>
         <tr>
             <td>ElasticHosts GB</td>
@@ -256,6 +268,34 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
         <tr>
             <td>Rackspace</td>
             <td>cloudfiles</td>
+        </tr>
+    </tbody>
+</table>
+
+## <a id="loadbalancer"></a>LoadBalancer
+### <a id="loadbalancer-providers"></a>Providers 
+
+The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider) and [org.apache.jclouds.labs](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.labs).
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Provider</th>
+            <th>Maven Artifact ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>AWS Elastic Load Balancer</td>
+            <td>aws-elb</td>
+        </tr>
+        <tr>
+            <td>Rackspace UK</td>
+            <td>rackspace-cloudloadbalancers-uk</td>
+        </tr>
+        <tr>
+            <td>Rackspace US</td>
+            <td>rackspace-cloudloadbalancers-us</td>
         </tr>
     </tbody>
 </table>
