@@ -272,7 +272,7 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
     </tbody>
 </table>
 
-## <a id="loadbalancer"></a>LoadBalancer
+## <a id="loadbalancer"></a>LoadBalancer (Beta)
 ### <a id="loadbalancer-providers"></a>Providers 
 
 The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider) and [org.apache.jclouds.labs](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.labs).

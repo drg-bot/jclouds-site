@@ -26,3 +26,7 @@ body { padding-top: 40px; }
     background: white; 
     font-weight: bold;
 }
+
+.green {
+    color: green;
+}
