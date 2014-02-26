@@ -3,22 +3,37 @@ layout: page
 title: Getting Started with Apache jclouds&reg;
 ---
 
-<dl class="dl-horizontal">
-    <dt><a href="/gettingstarted/what-is-jclouds/">What is jclouds?</a></dt>
-    <dd>A basic introduction about what jclouds is and why you should use it.</dd>
-
-    <dt><a href="/gettingstarted/installation-guide/">Install jclouds</a></dt>
-    <dd>The installation guide for jclouds.</dd>
-    
-    <dt><a href="/gettingstarted/compute/">Compute</a></dt>
-    <dd>The user guide for the Computeservice abstraction.</dd>
-    
-    <dt><a href="/gettingstarted/blobstore/">BlobStore</a></dt>
-    <dd>The user guide for the BlobStore abstraction.</dd>
-    
-    <dt><a href="/guides/">Provider guides</a></dt>
-    <dd>Guides to use specific providers.</dd>
-    
-    <dt><a href="https://github.com/jclouds/jclouds-examples">jclouds Examples</a></dt>
-    <dd>See examples of jclouds in action.</dd>
-</dl>
+<table class="table table-striped table-hover">
+<tbody>
+<tr>
+    <td><span class="glyphicon glyphicon-cloud text-primary"></span>
+    &nbsp;<a href="/gettingstarted/what-is-jclouds/">What is jclouds?</a></td>
+    <td>A basic introduction about what jclouds is and why you should use it.</td>
+</tr>
+<tr>
+    <td><span class="glyphicon glyphicon-download text-primary"></span>
+    &nbsp;<a href="/gettingstarted/installation-guide/">Install jclouds</a></td>
+    <td>The installation guide for jclouds.</td>
+</tr>
+<tr>
+    <td><span class="glyphicon glyphicon-cog text-primary"></span>
+    &nbsp;<a href="/gettingstarted/compute/">Compute</a></td>
+    <td>The user guide for the Computeservice abstraction.</td>
+</tr>
+<tr>
+    <td><span class="glyphicon glyphicon-hdd text-primary"></span>
+    &nbsp;<a href="/gettingstarted/blobstore/">BlobStore</a></td>
+    <td>The user guide for the BlobStore abstraction.</td>
+</tr>
+<tr>
+    <td><span class="glyphicon glyphicon-fire text-primary"></span>
+    &nbsp;<a href="/guides/">Provider guides</a></td>
+    <td>Guides to use specific providers.</td>
+</tr>
+<tr>
+    <td><span class="glyphicon glyphicon-book text-primary"></span>
+    &nbsp;<a href="https://github.com/jclouds/jclouds-examples">jclouds Examples</a></td>
+    <td>See examples of jclouds in action.</td>
+</tr>
+</tbody>
+</table>

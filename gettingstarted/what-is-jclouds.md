@@ -28,7 +28,7 @@ jclouds offers several API abstractions as Java and Clojure libraries. The most 
 </tbody>
 </table>
 
-# WHY SHOULD I USE JCLOUDS?
+# Why should I use jclouds?
 
 Programming against cloud environments can be challenging. jclouds focuses on the following areas so that you can get started in the cloud sooner.
 
