@@ -17,8 +17,8 @@ title: Getting Started with Apache jclouds&reg;
 </tr>
 <tr>
     <td><span class="glyphicon glyphicon-cog text-primary"></span>
-    &nbsp;<a href="/gettingstarted/compute/">Compute</a></td>
-    <td>The user guide for the Computeservice abstraction.</td>
+    &nbsp;<a href="/gettingstarted/compute/">ComputeService</a></td>
+    <td>The user guide for the ComputeService abstraction.</td>
 </tr>
 <tr>
     <td><span class="glyphicon glyphicon-hdd text-primary"></span>

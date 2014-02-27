@@ -14,7 +14,7 @@ jclouds offers several API abstractions as Java and Clojure libraries. The most 
 <table class="table table-striped table-hover">
 <tbody>
 <tr>
-    <td><a href="/gettingstarted/compute"><strong>Compute</strong></a></td>
+    <td><a href="/gettingstarted/compute"><strong>ComputeService</strong></a></td>
     <td>ComputeService streamlines the task of managing instances in the cloud by enabling you to start multiple machines at once and install software on them.</td>
 </tr>
 <tr>
