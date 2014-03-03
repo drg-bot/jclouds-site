@@ -14,23 +14,20 @@
                     <div class="jumbotron">
                         <h2>The Java Multi-Cloud Toolkit</h2>
                         <p>Apache jclouds® is an open source multi-cloud toolkit for the Java platform that gives you the freedom to create applications that are <strong>portable across clouds</strong> while giving you <strong>full control</strong> to use cloud-specific features.</p>
-                        <!--
-                        <p>Apache jclouds&reg; is a cloud agnostic library for the JVM that enables developers to access <strong>over 30 cloud providers</strong> using one API.</p>
-                        -->
                         <p>
                             <a class="btn btn-primary btn-large" href="/start/">
                                 <span class="glyphicon glyphicon-book"></span>
-                                Learn more
+                                Learn
                             </a>
-                            <a class="btn btn-warning btn-large" href="/start/install/">
+                            <a class="btn btn-success btn-large" href="/start/install/">
                                 <span class="glyphicon glyphicon-download"></span>
-                                Download
+                                Install
                             </a>
                             <a class="btn btn-warning btn-large" href="https://github.com/jclouds/jclouds">
                                 <span class="glyphicon glyphicon-cog"></span>
-                                Source code
+                                Source
                             </a>
-                            <a class="btn btn-success btn-large" href="/community">
+                            <a class="btn btn-warning btn-large" href="/community/">
                                 <span class="glyphicon glyphicon-globe"></span>
                                 Contribute
                             </a>
@@ -79,7 +76,7 @@ Template template = compute.templateBuilder()
     .minRam(2048)
     .options(inboundPorts(22, 80))
     .build();
-    
+
 compute.createNodesInGroup("jclouds", 1, template);
 {% endhighlight %}
                         </div>
@@ -112,7 +109,7 @@ blobStore.putBlob("mycontainer", blob);
             <div class="row clearfix">
                 <div class="col-md-3 column">
                     <h3 class="text-primary"><span class="glyphicon glyphicon-cog"></span>&nbsp;Compute</h3>
-                    <p>The portable Compute interface allows users to provision their infrastructure in any cloud provider. With Apache jclouds&reg; users are in control of the entire process: deployment configuration, provisioning and bootstrap.</p> 
+                    <p>The portable Compute interface allows users to provision their infrastructure in any cloud provider. With Apache jclouds&reg; users are in control of the entire process: deployment configuration, provisioning and bootstrap.</p>
                 </div>
                 <div class="col-md-3 column">
                     <h3 class="text-primary"><span class="glyphicon glyphicon-hdd"></span>&nbsp;BlobStore</h3>
