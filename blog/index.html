@@ -5,8 +5,8 @@ title: Blog & News
 
 {% for post in paginator.posts %}
 <h3><a class="text-primary" href="{{ post.url }}">{{ post.title }}</a></h3>
-<em>{{ post.date | date: "%-d %B %Y"}}, by {{ post.author }}</em>
-{{ post.excerpt }}
+<span class="text-muted">{{ post.date | date: "%-d %B %Y"}}, by {{ post.author }}</span>
+<p>{{ post.excerpt }}</p>
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
