@@ -25,7 +25,7 @@ If you do not have a *pom.xml* file, you can copy and paste the one below. If yo
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <properties>
-    <jclouds.version>1.7.0</jclouds.version>
+    <jclouds.version>1.7.1</jclouds.version>
   </properties>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
@@ -82,7 +82,7 @@ You can add jclouds to your *project.clj* like below, supporting clojure 1.2 and
 :dependencies [[org.clojure/clojure "1.3.0"]
                [org.clojure/core.incubator "0.1.0"]
                [org.clojure/tools.logging "0.2.3"]
-               [org.apache.jclouds/jclouds-all "1.7.0"]]
+               [org.apache.jclouds/jclouds-all "1.7.1"]]
 {% endhighlight %}
 
 ### Using the daily builds
@@ -102,7 +102,7 @@ You can add jclouds snapshots to your *project.clj* like below:
 * Download [lein](https://github.com/technomancy/leiningen/raw/stable/bin/lein) and make it executable.
 * Create a *project.clj* file with the below contents.
 {% highlight clojure %}
-(defproject deps "1" :dependencies [[org.apache.jclouds/jclouds-all "1.7.0"] [org.apache.jclouds.driver/jclouds-sshj "1.7.0"]])
+(defproject deps "1" :dependencies [[org.apache.jclouds/jclouds-all "1.7.1"] [org.apache.jclouds.driver/jclouds-sshj "1.7.1"]])
 {% endhighlight %}
 * Execute `lein pom`, then `mvn dependency:copy-dependencies` which will fill **target/dependency** with all the jclouds jars.
 
@@ -120,7 +120,7 @@ Then, add jclouds to your *build.xml* as shown below:
 
 {% highlight xml %}
 <artifact:dependencies pathId="jclouds.classpath">
-    <dependency groupId="org.apache.jclouds"artifactId="jclouds-all" version="1.7.0" />
+    <dependency groupId="org.apache.jclouds"artifactId="jclouds-all" version="1.7.1" />
 </artifact:dependencies>
 {% endhighlight %}
 
@@ -153,8 +153,8 @@ When you run this script with *ant*, it will build a *lib* directory full of jar
         <delete dir="lib" />
         <mkdir dir="lib" />
         <artifact:dependencies filesetId="jclouds.fileset" versionsId="dependency.versions">
-            <dependency groupId="org.apache.jclouds" artifactId="jclouds-all" version="1.7.0" />
-            <dependency groupId="org.apache.jclouds.driver" artifactId="jclouds-sshj" version="1.7.0" />
+            <dependency groupId="org.apache.jclouds" artifactId="jclouds-all" version="1.7.1" />
+            <dependency groupId="org.apache.jclouds.driver" artifactId="jclouds-sshj" version="1.7.1" />
             <dependency groupId="ch.qos.logback" artifactId="logback-classic" version="[1.0.9,)" />
         </artifact:dependencies>
         <copy todir="lib" verbose="true">
@@ -178,13 +178,13 @@ When you run this script with *ant*, it will build a *lib* directory full of jar
 To only fetch the jars for a particular provider replace
 
 {% highlight xml %}
-      <dependency groupId="org.apache.jclouds" artifactId="jclouds-all" version="1.7.0" />
+      <dependency groupId="org.apache.jclouds" artifactId="jclouds-all" version="1.7.1" />
 {% endhighlight %}
 
 with
 
 {% highlight xml %}
-      <dependency groupId="org.apache.jclouds.provider" artifactId="the-provider-id" version="1.7.0" />
+      <dependency groupId="org.apache.jclouds.provider" artifactId="the-provider-id" version="1.7.1" />
 {% endhighlight %}
 {% endcapture %}
 {{ m | markdownify }}

@@ -1,5 +1,5 @@
 ---
-layout: toc
+layout: page
 title: Compute Guide
 ---
 
