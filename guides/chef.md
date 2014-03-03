@@ -6,8 +6,8 @@ title: "Chef: Getting Started Guide"
 1. Setup a Chef Server or register for [Enterprise Chef](https://getchef.opscode.com/signup).
 2. Ensure you are using a recent JDK 6 version.
 3. Setup your project to include `chef`, or `enterprisechef`, depending on the Chef flavor you are going to connect to.
-    * Get the dependencies `org.apache.jclouds.api/chef` using jclouds [Installation](/gettingstarted/installation-guide).
-    * Get the dependencies `org.apache.jclouds.provider/enterprisechef` using jclouds [Installation](/gettingstarted/installation-guide).
+    * Get the dependencies `org.apache.jclouds.api/chef` using jclouds [Installation](/start/install).
+    * Get the dependencies `org.apache.jclouds.provider/enterprisechef` using jclouds [Installation](/start/install).
 4. Start coding
 
 ## About Enterprise Chef

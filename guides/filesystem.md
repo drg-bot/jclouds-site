@@ -4,7 +4,7 @@ title: "File System: Getting Started Guide"
 ---
 
 1. Setup your project to include filesystem
-	* Get the dependency `org.jclouds.api/filesystem` using jclouds [Installation](/gettingstarted/installation-guide).
+	* Get the dependency `org.jclouds.api/filesystem` using jclouds [Installation](/start/install).
 2. Start coding
 
 {% highlight java %}

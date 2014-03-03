@@ -7,22 +7,22 @@ title: Getting Started with Apache jclouds&reg;
 <tbody>
 <tr>
     <td><span class="glyphicon glyphicon-cloud text-primary"></span>
-    &nbsp;<a href="/gettingstarted/what-is-jclouds/">What is jclouds?</a></td>
+    &nbsp;<a href="/start/what-is-jclouds/">What is jclouds?</a></td>
     <td>A basic introduction about what jclouds is and why you should use it.</td>
 </tr>
 <tr>
     <td><span class="glyphicon glyphicon-download text-primary"></span>
-    &nbsp;<a href="/gettingstarted/installation-guide/">Install jclouds</a></td>
+    &nbsp;<a href="/start/install/">Install jclouds</a></td>
     <td>The installation guide for jclouds.</td>
 </tr>
 <tr>
     <td><span class="glyphicon glyphicon-cog text-primary"></span>
-    &nbsp;<a href="/gettingstarted/compute/">ComputeService</a></td>
+    &nbsp;<a href="/start/compute/">ComputeService</a></td>
     <td>The user guide for the ComputeService abstraction.</td>
 </tr>
 <tr>
     <td><span class="glyphicon glyphicon-hdd text-primary"></span>
-    &nbsp;<a href="/gettingstarted/blobstore/">BlobStore</a></td>
+    &nbsp;<a href="/start/blobstore/">BlobStore</a></td>
     <td>The user guide for the BlobStore abstraction.</td>
 </tr>
 <tr>

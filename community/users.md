@@ -50,7 +50,7 @@ We know folks from a good many places.  While this may just be a list of applica
 </tr>
 <tr>
     <td><a href="http://www.cloudsoftcorp.com/">Cloudsoft Monterey</a></td>
-    <td>Uses <a href="/gettingstarted/compute">ComputeService</a> to extend the Monterey overlay network across multiple public clouds</td>
+    <td>Uses <a href="/start/compute">ComputeService</a> to extend the Monterey overlay network across multiple public clouds</td>
 </tr>
 <tr>
     <td><a href="https://cldstr.com/">Cloudstore</a></td>
@@ -90,7 +90,7 @@ We know folks from a good many places.  While this may just be a list of applica
 </tr>
 <tr>
     <td><a href="http://www.funambol.com/">Funambol</a></td>
-    <td>Uses <a href="/gettingstarted/blobstore">BlobStore</a> to help synchronize content across multiple cloud providers or locally to disk</td>
+    <td>Uses <a href="/start/blobstore">BlobStore</a> to help synchronize content across multiple cloud providers or locally to disk</td>
 </tr>
 <tr>
     <td><a href="http://fabric.fusesource.org/">Fuse Fabric</a></td>
@@ -154,7 +154,7 @@ We know folks from a good many places.  While this may just be a list of applica
 </tr>
 <tr>
     <td><a href="http://www.omixon.com/">Omixon</a></td>
-    <td>Uses <a href="/gettingstarted/blobstore">BlobStore</a> for big data transfer and made Apache Whirr to provision Hadoop</td>
+    <td>Uses <a href="/start/blobstore">BlobStore</a> for big data transfer and made Apache Whirr to provision Hadoop</td>
 </tr>
 <tr>
     <td><a href="http://palletops.com/">Pallet</a></td>
@@ -174,7 +174,7 @@ We know folks from a good many places.  While this may just be a list of applica
 </tr>
 <tr>
     <td><a href="https://github.com/gschueler/rundeck-jclouds">RunDeck integration</a></td>
-    <td>Uses <a href="/gettingstarted/compute">ComputeService</a> as a resource provider for runbook automation</td>
+    <td>Uses <a href="/start/compute">ComputeService</a> as a resource provider for runbook automation</td>
 </tr>
 <tr>
     <td><a href="http://www.salesforce.com/">Salesforce</a></td>
@@ -182,7 +182,7 @@ We know folks from a good many places.  While this may just be a list of applica
 </tr>
 <tr>
     <td><a href="http://seatyourself.biz/">SeatYourself</a></td>
-    <td>Uses <a href="/gettingstarted/blobstore">BlobStore</a> to persist data</td>
+    <td>Uses <a href="/start/blobstore">BlobStore</a> to persist data</td>
 </tr>
 <tr>
     <td><a href="http://www.twitter.com">Twitter</a></td>

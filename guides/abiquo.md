@@ -6,7 +6,7 @@ title: "Abiquo: Getting Started Guide"
 1. Get access to a running Abiquo cloud.
 2. Ensure you are using a recent JDK 6 version.
 3. Set up your project to include `abiquo`.
-	* Get the dependencies `org.jclouds.labs/abiquo` using jclouds [Installation](/gettingstarted/installation-guide).
+	* Get the dependencies `org.jclouds.labs/abiquo` using jclouds [Installation](/start/install).
 4. Start coding.
 
 ## Using the ComputeService portable API

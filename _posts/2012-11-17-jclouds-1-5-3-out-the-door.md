@@ -19,6 +19,6 @@ Many thanks to the contributors in this release of [jclouds](https://github.com/
 
 Moreover, we're indebted to [BuildHive](http://blog.cloudbees.com/2012/11/500-jclouds-builds-on-buildhive-and.html) for checking over 500 pull requests to date! On a build side, we currently validate both JDK6 and JDK7 on each pull, thanks to [Andrew Phillips](https://github.com/demobox).
 
-Please [update](/documentation/userguide/installation-guide/) to jcloud 1.5.3 and check the new features. Particularly, try things out using JDK7. If you have questions, ping our user group or tag your question with *jclouds* on [stackoverflow](http://stackoverflow.com/tags/jclouds).
+Please [update](/documentation/userguide/install/) to jcloud 1.5.3 and check the new features. Particularly, try things out using JDK7. If you have questions, ping our user group or tag your question with *jclouds* on [stackoverflow](http://stackoverflow.com/tags/jclouds).
 
 We are working on 1.6 now, which includes a lot of cleanup and mechanisms to make less api calls when starting groups of machines. If interested in helping us out, hop onto IRC freenode #jclouds or join our dev group.

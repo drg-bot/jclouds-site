@@ -3,7 +3,7 @@ layout: page
 title: "EC2: In Depth"
 ---
 
-The compute service is implemented fully for EC2 - so you can follow the guides to using the [ComputeService API](/gettingstarted/compute).
+The compute service is implemented fully for EC2 - so you can follow the guides to using the [ComputeService API](/start/compute).
 
 For credentials you will want you access key id and secret access key (don't use your user id or anything else).
 For practical EC2 usage - you will probably want to check out [AWS Getting Started Guide](/guides/aws)
