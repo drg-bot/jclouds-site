@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Azure Storage Service: Getting Started Guide"
+permalink: /guides/azure-storage/
 ---
 
 1. Sign up for an [Azure Account](http://www.microsoft.com/windowsazure/offers/)

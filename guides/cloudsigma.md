@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Cloud Sigma: Getting Started Guide"
+permalink: /guides/cloudsigma/
 ---
 
 1. Signup for [CloudSigma](http://www.cloudsigma.com/)

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Logging
+permalink: /reference/logging/
 ---
 
 1. [Install](#install)

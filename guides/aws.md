@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Amazon Web Services: Getting Started Guide"
+permalink: /guides/aws/
 ---
 
 This page helps you get started with `jclouds` API with Amazon Web Services

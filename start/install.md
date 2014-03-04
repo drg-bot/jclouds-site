@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Installation Guide
+permalink: /start/install/
 ---
 
 <ul class="nav nav-tabs">
@@ -18,7 +19,7 @@ title: Installation Guide
 
 It is very easy to install jclouds using Apache Maven. If you're new to Maven, read <a href="http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven in 5 Minutes</a>.
 
-If you do not have a *pom.xml* file, you can copy and paste the one below. If your project already has a *pom.xml* file, just add the dependency section below into it. 
+If you do not have a *pom.xml* file, you can copy and paste the one below. If your project already has a *pom.xml* file, just add the dependency section below into it.
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -64,7 +65,7 @@ If you want to use the bleeding edge release of jclouds, you'll need to setup a 
 {% endhighlight %}
 
 ### Download the binaries
-    
+
 * Create a *pom.xml* file like the one in the <a href="#maven">Maven Configuration</a> section above.
 * Execute `mvn dependency:copy-dependencies`.
 * You'll notice a new directory **target/dependency** with all the jars you need.
@@ -162,10 +163,10 @@ When you run this script with *ant*, it will build a *lib* directory full of jar
             <mapper type="flatten" />
         </copy>
     </target>
-  
+
     <get src="http://search.maven.org/remotecontent?filepath=org/apache/maven/maven-ant-tasks/2.1.3/maven-ant-tasks-2.1.3.jar"
          dest="maven-ant-tasks.jar"/>
-  
+
     <target name="initmvn">
         <path id="maven-ant-tasks.classpath" path="maven-ant-tasks.jar"/>
         <typedef resource="org/apache/maven/artifact/ant/antlib.xml"

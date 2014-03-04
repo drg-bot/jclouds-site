@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Who is using jclouds
+permalink: /community/users/
 ---
 
 We know folks from a good many places.  While this may just be a list of applications that use jclouds, the good people behind these applications are valuable members of our community.

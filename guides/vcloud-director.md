@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "VMWare vCloud Director: Getting Started Guide"
+permalink: /guides/vcloud-director/
 ---
 
 jclouds currently supports most of the VMware vCloud Director API. We also provide tools that make developing to it easier.
@@ -11,7 +12,7 @@ TBD
 * Getting a context to any portable version 1.5 vCloud:
 TBD
 
-## Access all the available clients inside the 
+## Access all the available clients inside the
 {% highlight text %}
 RestContext<VCloudDirectorApi, VCloudDirectorAsyncApi> context;
 
@@ -26,7 +27,7 @@ networkApi = context.getApi().getNetworkApi();
 
 Each one of them allows you to access the API functionalities of any vCloud Director subsystem.
 
-## Portability 
+## Portability
 The actual implementation assumes that some vAppTemplates are already available in this vCD instance.
 Starting from a vApp template, in fact, is possible to compose a vApp
 

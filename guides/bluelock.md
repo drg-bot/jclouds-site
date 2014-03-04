@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "BlueLock vCloud: Getting Started Guide"
+permalink: /guides/bluelock/
 ---
 
 **Please note that the support for BlueLock vCloud Director is not complete**

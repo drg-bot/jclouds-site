@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Abiquo: Getting Started Guide"
+permalink: /guides/abiquo/
 ---
 
 1. Get access to a running Abiquo cloud.

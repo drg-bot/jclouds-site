@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Elastic Block Store: In Depth"
+permalink: /guides/aws-ebs/
 ---
 
 Amazon EC2 (`aws-ec2`) and compatible apis such as Eucalyptus (`eucalyptus`) include support for

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Simple Queue Service: In Depth"
+permalink: /guides/aws-sqs/
 ---
 
 Amazon SQS (`aws-sqs`) is an easy queuing service with which you can easily send or receive 1-10 messages at a time. SQS support has been in jclouds since version 1.5.0.
@@ -32,7 +33,7 @@ queueApi.send("my message");
 {% endhighlight %}
 
 ### receiving a message
-Receiving a message is also simple: invoke `receive` and if your result is not null, you have a message! 
+Receiving a message is also simple: invoke `receive` and if your result is not null, you have a message!
 
 {% highlight java %}
 message = queueApi.receive();

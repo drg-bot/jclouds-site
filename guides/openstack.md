@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "OpenStack: Getting Started Guide"
+permalink: /guides/openstack/
 ---
 
 1. [Introduction](#intro)

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Chef: Getting Started Guide"
+permalink: /guides/chef/
 ---
 
 1. Setup a Chef Server or register for [Enterprise Chef](https://getchef.opscode.com/signup).

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "HP Cloud: Getting Started Guide"
+permalink: /guides/hpcloud/
 ---
 
 This page helps you get started with jclouds API with

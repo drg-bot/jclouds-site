@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Providers
+permalink: /guides/providers/
 ---
 
 The following is the list of providers that are supported by the jclouds API.
@@ -13,9 +14,9 @@ The following is the list of providers that are supported by the jclouds API.
     1. [BlobStore APIs](#blobstore-apis)
 1. [LoadBalancer](#loadbalancer) (Beta)
     1. [LoadBalancer Providers](#loadbalancer-providers)
-    
+
 ## <a id="compute"></a>ComputeService
-### <a id="compute-providers"></a>Providers 
+### <a id="compute-providers"></a>Providers
 
 The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider)
 
@@ -143,10 +144,10 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
 
 ### <a id="compute-apis"></a>APIs
 
-You can also set the context property `[Artifact ID].endpoint` to use the following APIs for your private cloud.  
+You can also set the context property `[Artifact ID].endpoint` to use the following APIs for your private cloud.
 
 The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.api)
-                       
+
 <table class="table table-striped table-hover">
     <thead>
         <tr>
@@ -237,10 +238,10 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
 
 ### <a id="blobstore-apis"></a>APIs
 
-You can also set the context property `[Artifact ID].endpoint` to use the following APIs for your private cloud.  
+You can also set the context property `[Artifact ID].endpoint` to use the following APIs for your private cloud.
 
 The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.api)
-                       
+
 <table class="table table-striped table-hover">
     <thead>
         <tr>
@@ -273,7 +274,7 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
 </table>
 
 ## <a id="loadbalancer"></a>LoadBalancer (Beta)
-### <a id="loadbalancer-providers"></a>Providers 
+### <a id="loadbalancer-providers"></a>Providers
 
 The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider) and [org.apache.jclouds.labs](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.labs).
 

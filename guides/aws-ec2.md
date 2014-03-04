@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "EC2: In Depth"
+permalink: /guides/aws-ec2/
 ---
 
 The compute service is implemented fully for EC2 - so you can follow the guides to using the [ComputeService API](/start/compute).

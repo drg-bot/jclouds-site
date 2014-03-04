@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "S3: In Depth"
+permalink: /guides/aws-s3/
 ---
 
 Some providers such as Google Cloud Storage and RiakCS and many private providers expose an S3-compatible interface.  Commonly, users install clones on non-https, or self-signed servers.  If you do so, make sure you set the following properties:

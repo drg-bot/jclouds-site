@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Report a Bug
+permalink: /reference/report-a-bug/
 ---
 
 If you run into a bug while using jclouds, we encourage you to report it. To help us help you, please collect as much of the following information as possible. If you can't get everything, that's okay. Send what you can.

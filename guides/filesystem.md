@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "File System: Getting Started Guide"
+permalink: /guides/filesystem/
 ---
 
 1. Setup your project to include filesystem

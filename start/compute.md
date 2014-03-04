@@ -1,39 +1,40 @@
 ---
 layout: page
 title: Compute Guide
+permalink: /start/compute/
 ---
 
-## Introduction 
-The jclouds Compute API provides a basic abstraction across Compute APIs such as Amazon EC2 and VMware vCloud.  
+## Introduction
+The jclouds Compute API provides a basic abstraction across Compute APIs such as Amazon EC2 and VMware vCloud.
 We also have integrations for popular tools such as Ant and Maven.
 
 ## Features
-### Location Aware API 
+### Location Aware API
 
-Unlike other tools, our compute api doesn't require you to establish multiple connections to clouds who are multi-homed. 
-For example, you can use the same object to access your resources in all regions of EC2.  
+Unlike other tools, our compute api doesn't require you to establish multiple connections to clouds who are multi-homed.
+For example, you can use the same object to access your resources in all regions of EC2.
 This allows you greater visibility into your resources and provides means to logically tie cross-wan resources together.
 
 ### Node Sets
-Using our compute API, you can run multiple nodes as a set regardless of the underlying cloud API.  
+Using our compute API, you can run multiple nodes as a set regardless of the underlying cloud API.
 In this way, you can fire up a 20 node cluster and manage it by its group name, as opposed to dealing with each node individually.
 
 ### SSH keys
-Our compute API natively helps with moving your ssh keys to the node on startup, so that 
+Our compute API natively helps with moving your ssh keys to the node on startup, so that
 you don't have to worry about remembering or storing random passwords or keys provided by the service.
 
 ### Run Script
-Our runScript features provide simple means for executing scripts on the machines in a set.  
+Our runScript features provide simple means for executing scripts on the machines in a set.
 It also includes special exception types that will allow you to handle errors appropriately.
 
 ### Stub Provider
-As more people are looking at concepts like devops, it follows that infrastructure as code implies testability as a concern. 
-One of our steps to help is the addition of a stub compute provider, which you can join with our in-memory blobstore to 
+As more people are looking at concepts like devops, it follows that infrastructure as code implies testability as a concern.
+One of our steps to help is the addition of a stub compute provider, which you can join with our in-memory blobstore to
 test your provisioning instructions before you try them out with your credit card:
 
 ### Credential persistence
 
-As of jclouds beta-9, you can now supply a map to persist credentials of your nodes across connections.  Using a blobstore-backed map, 
+As of jclouds beta-9, you can now supply a map to persist credentials of your nodes across connections.  Using a blobstore-backed map,
 this means you can keep track of all of your cloud nodes' credentials in a single place.
 
 ### Supported Providers
@@ -43,16 +44,16 @@ See [Compute API: Supported Providers](/documentation/reference/supported-provid
 
 ## API
 
-### Concepts 
-The Compute API is a portable means of managing nodes in clouds. It can manage nodes as a 
-set and address resources in any cloud without needing separate connections. It also has a 
-Template feature which allows you to search for configurations that match parameters such as 
-CPU count or operating system.  Finally, it contains utilities to execute scripts as part of 
+### Concepts
+The Compute API is a portable means of managing nodes in clouds. It can manage nodes as a
+set and address resources in any cloud without needing separate connections. It also has a
+Template feature which allows you to search for configurations that match parameters such as
+CPU count or operating system.  Finally, it contains utilities to execute scripts as part of
 the bootstrap process of your nodes.
 
 ### Template
 
-Templates are a way of encapsulating the requirements of your nodes such that similar configurations can be launched in other clouds.  
+Templates are a way of encapsulating the requirements of your nodes such that similar configurations can be launched in other clouds.
 
 A Template consists of the following elements:
 
@@ -61,25 +62,25 @@ A Template consists of the following elements:
   * Location - defines the region or datacenter in which your node(s) should run.
   * Options - defines optional parameters such as inbound ports to open or scripts to execute at boot time.
 
-Templates can be created from your service context via a TemplateBuilder.  This builder allows you 
+Templates can be created from your service context via a TemplateBuilder.  This builder allows you
 to specify your requirements with statements such as `minCores` and `imageId`.
 
 ### Operating System
-An Image is different from an Operating System. It is really a bunch of state that includes an operating system, 
-software and configuration. It is often versioned independently of the operating system. 
-Before, we lumped together operating system with image, as this is what amazon and some others did. 
-However, this assumes nodes are created from images. This is not the case in OVF-based systems like vCloud, 
+An Image is different from an Operating System. It is really a bunch of state that includes an operating system,
+software and configuration. It is often versioned independently of the operating system.
+Before, we lumped together operating system with image, as this is what amazon and some others did.
+However, this assumes nodes are created from images. This is not the case in OVF-based systems like vCloud,
 and we really had no clean way to address this before. Operating System as a type works much cleaner and across more systems.
 
 ### Hardware
-We previously had a class called Size which held a combination of size and hardware configuration data. 
-While simple, it limited our ability to address fine grained concerns, as it assumed there is 
-only a single disk, processor, etc. Our new Hardware type is much more robust, while still extremely simple to use. 
+We previously had a class called Size which held a combination of size and hardware configuration data.
+While simple, it limited our ability to address fine grained concerns, as it assumed there is
+only a single disk, processor, etc. Our new Hardware type is much more robust, while still extremely simple to use.
 While mounted volume information is read-only at the moment, expect us to add portability over systems like EBS and vCloud volumes in the near future.
 
 ### Usage
 
-Using the API is straightforward. You need to create a context to the service you wish to manage, and then act on it. 
+Using the API is straightforward. You need to create a context to the service you wish to manage, and then act on it.
 Here's how to perform common commands.
 
 ### Open your context and get a service reference
@@ -112,8 +113,8 @@ for (ComputeMetadata node : client.listNodes()) {
 
 {% endhighlight %}
 
-Note that the result is of type `ComputeMetadata` rather than the more useful `NodeMetadata`.  
-This is because many services offer only minimal details on listing.  To flesh out the objects you want, 
+Note that the result is of type `ComputeMetadata` rather than the more useful `NodeMetadata`.
+This is because many services offer only minimal details on listing.  To flesh out the objects you want,
 call the _Get Node Metadata_ command.
 
 ### Get Node Metadata
@@ -123,7 +124,7 @@ Use the _Get Node Metadata_ command to retrieve commonly required information ab
 
 NodeMetadata metadata = client.getNodeMetadata(node);
 metadata.getId();
-metadata.getProviderId(); 
+metadata.getProviderId();
 metadata.getLocation();
 metadata.getName();
 metadata.getGroup();// if part of a nodeset, this identifies which one.
@@ -137,10 +138,10 @@ metadata.getCredentials();// only available after createNodesInGroup, identifies
 {% endhighlight %}
 ### List Assignable Locations
 
-The _List Assignable Location_ command returns all the valid locations for nodes.  
-The list locations command returns all the valid locations for nodes. 
-A location has a scope, which is typically region or zone. A region is a general area, 
-like eu-west, where a zone is similar to a datacenter. If a location has a parent, 
+The _List Assignable Location_ command returns all the valid locations for nodes.
+The list locations command returns all the valid locations for nodes.
+A location has a scope, which is typically region or zone. A region is a general area,
+like eu-west, where a zone is similar to a datacenter. If a location has a parent,
 that implies it is within that location. For example a location can be a rack, whose parent is likely to be a zone.
 
 {% highlight java %}
@@ -148,10 +149,10 @@ Set<? extends Location> listAssignableLocations();
 {% endhighlight %}
 
 ### List Hardware Profiles
-The _List Hardware Profiles_ command returns settings including virtual CPU count, memory, and disks. 
+The _List Hardware Profiles_ command returns settings including virtual CPU count, memory, and disks.
 
-CPU count is not a portable quantity across clouds, as they are The list hardware profiles 
-command shows you the options including virtual cpu count, memory, and disks. cpu count is not 
+CPU count is not a portable quantity across clouds, as they are The list hardware profiles
+command shows you the options including virtual cpu count, memory, and disks. cpu count is not
 a portable quantity across clouds, as they are measured differently. However, it is a good indicator of
  relative speed within a cloud. memory is measured in megabytes and disks in gigabytes.
 
@@ -160,20 +161,20 @@ Set<? extends Hardware> listHardwareProfiles();
 {% endhighlight %}
 
 ### List Images
-The _List Images_ command define the operating system and metadata related to a node.  
-In some clouds, images are bound to a specific region, and their identifiers are different across regions.  
+The _List Images_ command define the operating system and metadata related to a node.
+In some clouds, images are bound to a specific region, and their identifiers are different across regions.
 For this reason, you should consider matching image requirements like operating system family with TemplateBuilder as opposed to choosing an image explicitly.
 
 {% highlight java %}
    Set<? extends Image> listImages();
 {% endhighlight %}
 
-### Create Nodes with Group 
+### Create Nodes with Group
 
-The compute API treats nodes as a group based on a group you specify. Using this group, 
+The compute API treats nodes as a group based on a group you specify. Using this group,
 you can choose to operate on one or many nodes as a logical unit without regard to the implementation details of the cloud.
 
-`createNodesInGroup` returns all of the nodes the API was able to launch into in a running state with port 22 open. 
+`createNodesInGroup` returns all of the nodes the API was able to launch into in a running state with port 22 open.
 If resources such as security groups are needed, they will be reused or created for you.
 Here's an example of how to start a nodeSet:
 
@@ -181,8 +182,8 @@ Here's an example of how to start a nodeSet:
 NodeSet nodes = client.createNodesInGroup(group, 2, template);
 {% endhighlight %}
 
-The set that is returned will include credentials you can use to ssh into the nodes. 
-The "credential" part of the credentials is either a password or a private key. You have to inspect the value to determine this.  
+The set that is returned will include credentials you can use to ssh into the nodes.
+The "credential" part of the credentials is either a password or a private key. You have to inspect the value to determine this.
 Make sure you look also at the "identity" part of the credentials object so that you don't attempt to login as the wrong user.
 
 {% highlight java %}
@@ -190,16 +191,16 @@ if (node.getCredentials().credential.startsWith("-----BEGIN RSA PRIVATE KEY-----
  // it is a private key, not a password.
 {% endhighlight %}
 
-Note: If all you want to do is execute a script at bootup, you should consider use of the runScript option. 
+Note: If all you want to do is execute a script at bootup, you should consider use of the runScript option.
 
 ### Predicate Commands
-Commands ending in `Matching` allow you to decide which subset of nodes you with to affect.  
+Commands ending in `Matching` allow you to decide which subset of nodes you with to affect.
 All predicate commands are run in parallel for highest efficiency.
 
 #### Example Predicates
 
 There are a number of predicates in the `NodePredicates` class.  Here are a few combinations that you may find interesting:
-  
+
   * `runningInGroup(group)` - affect any nodes that are already running, refined to a specific group
 
 {% highlight java %}
@@ -225,7 +226,7 @@ Iterable<? extends NodeMetadata> billedNodes = filter(client.listNodesDetailsMat
 
 ##### Destroy Nodes Matching Predicate
 
-nodes matching the filter are destroyed as a logical set.   
+nodes matching the filter are destroyed as a logical set.
 When the last node in a set is destroyed, any indirect resources it uses, such as keypairs, are also destroyed.  Ex. here's how to destroy all nodes with a specific group:
 
 {% highlight java %}
@@ -233,7 +234,7 @@ import static org.jclouds.compute.predicates.NodePredicates.*;
    client.destroyNodesMatching(withGroup(group));
 {% endhighlight %}
 
-##### Reboot Nodes Matching Predicate 
+##### Reboot Nodes Matching Predicate
 Ex. here's how to reboot all nodes with a specific group:
 
 {% highlight java %}
@@ -250,10 +251,10 @@ import static org.jclouds.compute.predicates.NodePredicates.runningInGroup;
 responses = client.runScriptOnNodesMatching(runningInGroup(group), script);
 {% endhighlight %}
 
-If you created your nodes using the `authorizePublicKey` option, then you are probably interested in using that again here.  
+If you created your nodes using the `authorizePublicKey` option, then you are probably interested in using that again here.
 However, you should always look up the login user associated with the host, as it may not be root.
 
-*Note* if you think this should change, please file an issue.  For example, we could in the future create a 
+*Note* if you think this should change, please file an issue.  For example, we could in the future create a
 sudo-able login user on the nodes, simplifying this process.
 
 {% highlight java %}
@@ -273,7 +274,7 @@ responses = client.runScriptOnNodesMatching(runningInGroup(group), script,
 {% endhighlight %}
 
 ### Individual Node Commands
-Individual commands are executed against a specific node's `id` (not `providerId`!).  
+Individual commands are executed against a specific node's `id` (not `providerId`!).
 You can save time if you know you are only affecting one node, and don't need jclouds' help finding it.
 
 #### Commands
@@ -337,7 +338,7 @@ If you are using the Log4JLoggingModule, here is an example log4j.xml stanza you
 Please see [][UsingJCloudsWithGAE]]
 
 ## Advanced Usage
-Almost all advanced features require ssh.  You will likely also want to use log4j and our 
+Almost all advanced features require ssh.  You will likely also want to use log4j and our
 enterprise configuration module.  Here's how to configure these.
 
 {% highlight java %}
@@ -407,9 +408,9 @@ else
 {% endhighlight %}
 
 ### Opening ports
-Unless you specify otherwise, only access to public IP on port 22 is explicitly configured.  
-In clouds such as hosting.com and Rackspace, this doesn't matter, as all services are available by default.  
-However, in clouds like Terremark and EC2, you will want to open at least 1 additional port most of the time.  
+Unless you specify otherwise, only access to public IP on port 22 is explicitly configured.
+In clouds such as hosting.com and Rackspace, this doesn't matter, as all services are available by default.
+However, in clouds like Terremark and EC2, you will want to open at least 1 additional port most of the time.
 Here's how:
 
 {% highlight java %}
@@ -430,9 +431,9 @@ template = client.templateBuilder().hardwareId(InstanceType.M1_SMALL)
 
 ### Authorizing your RSA SSH Public Key
 
-The compute API supports authorizing a public key on a node or node set.  
-This allows you to use a single credential across the entire set of nodes.  
-Note that this does not change the private key of the node.  
+The compute API supports authorizing a public key on a node or node set.
+This allows you to use a single credential across the entire set of nodes.
+Note that this does not change the private key of the node.
 If you are interested in changing the private key, look at the `installPrivateKey` option.
 
 In order to use this feature, you must generate or load your RSA public key into a String.  Set the option `authorizePublicKey` to this value.  Note that if you have done this correctly, your key will start with `ssh-rsa`.
@@ -452,12 +453,12 @@ To install an SSH private key for a different user, override the credentials wit
 
 ### Installing your RSA SSH Private Key
 
-The compute API supports replacing the node's private key with one you specify.  
-This is different than authorizing your public key.  The private key determines the identity of 
-root on your machine so that outgoing SSH can be authorized. You can use this feature alongside 
+The compute API supports replacing the node's private key with one you specify.
+This is different than authorizing your public key.  The private key determines the identity of
+root on your machine so that outgoing SSH can be authorized. You can use this feature alongside
 authorizing RSA to establish an SSH mesh.  An SSH mesh can be used to manage tools such as Hadoop.
 
-In order to use this feature, you must generate or load your RSA key into a String.  Set the option 
+In order to use this feature, you must generate or load your RSA key into a String.  Set the option
 `installPrivateKey` to this value.  Note that if you have done this correctly, your key will start with
 `-----BEGIN RSA PRIVATE KEY-----`.
 
@@ -473,10 +474,10 @@ Note that SSH must be configured for this feature to work.
 
 ### Adding a post-boot script
 
-The compute API supports injection and execution of a single file as `root` post-bootup.  
+The compute API supports injection and execution of a single file as `root` post-bootup.
 The exact implementation depends on the features offered by the target cloud.
 
-In order to use this feature, you must generate or load a script as a jclouds `Statement` or a String value.  
+In order to use this feature, you must generate or load a script as a jclouds `Statement` or a String value.
 Set the option `runScript` to this value.
 
 Ex.
@@ -487,16 +488,16 @@ import static org.jclouds.compute.options.TemplateOptions.Builder.runScript;
       nodes = client.createNodesInGroup(group, 10, runScript(Files.toString(new File("runscript.sh")));
 {% endhighlight %}
 
-Note that SSH must be configured for this feature to work. 
+Note that SSH must be configured for this feature to work.
 
 #### Default Template
-While many configurations may work with runScript, we setup the default template so that it can work 
+While many configurations may work with runScript, we setup the default template so that it can work
 without parameters (ex. `templateBuilder().build()` works).
 
 
 ##### 1.0.0
 
-As of jclouds 1.0.0 here are the template patterns that represent the default template. 
+As of jclouds 1.0.0 here are the template patterns that represent the default template.
 
 *Unless specified below, the default template is `osFamily(UBUNTU).osVersionMatches("10.04").os64Bit(true)`*
 
@@ -511,7 +512,7 @@ _This is significantly out of date._
 | ec2 | osFamily(AMZN_LINUX).os64Bit(true) |
 | gogrid | osFamily(CENTOS).imageNameMatches(".*w/ None.*") |
 
-##### Test Scripts 
+##### Test Scripts
 
   * OperatingSystemPredicates.supportsApt().apply(node.getOperatingSystem())
 
@@ -549,7 +550,7 @@ Statement userBuilderStatement = userBuilder.build();
 and run the built statement in `templateOptions.runScript` or add to a `StatementList`.
 
 #### Note on internal implementation and debugging
-The jclouds API allows many `Statements` to be built entirely from high-level concepts, 
+The jclouds API allows many `Statements` to be built entirely from high-level concepts,
 without having to resort to OS-specific scripts. This enables developers to express what they mean without having
  to deal with the gory details of various OS flavors.
 To see the commands that will be executed, print the result of `Statement.render(OsFamily.UNIX)`, for example.
@@ -565,7 +566,7 @@ To see the commands that will be executed, print the result of `Statement.render
   * for jclouds 1.1 and earlier (clojure 1.2 only)
 
 {% highlight clojure %}
-(defproject mygroup/myproject "1.0.0" 
+(defproject mygroup/myproject "1.0.0"
   :description "FIXME: write"
   :dependencies [[org.clojure/clojure "1.2.0"]
                  [org.clojure/clojure-contrib "1.2.0"]
@@ -574,20 +575,20 @@ To see the commands that will be executed, print the result of `Statement.render
 
     * for jclouds 1.2 / snapshot (clojure 1.2 and 1.3)
 {% highlight clojure %}
-(defproject mygroup/myproject "1.0.0" 
+(defproject mygroup/myproject "1.0.0"
   :description "FIXME: write"
   :dependencies [[org.clojure/clojure "1.3.0"]
                  [org.clojure/core.incubator "0.1.0"]
                  [org.clojure/tools.logging "0.2.3"]
                  [org.jclouds/jclouds-allcompute "1.2.0-SNAPSHOT"]]
-  :repositories {"jclouds-snapshot" "https://oss.sonatype.org/content/repositories/snapshots"}) 
+  :repositories {"jclouds-snapshot" "https://oss.sonatype.org/content/repositories/snapshots"})
 {% endhighlight %}
 
   * `lein deps`
 
 
 ### Usage
-Execute `lein repl` to get a repl, then paste the following or write your own code.  Clearly, 
+Execute `lein repl` to get a repl, then paste the following or write your own code.  Clearly,
 you need to substitute your accounts and keys below.
 
 {% highlight clojure %}
@@ -599,12 +600,12 @@ you need to substitute your accounts and keys below.
 
 The above will list all nodes with cloudservers. Here's an example of creating and running a small linux node with the group webserver, using ssh and log4j extensions:
 
-{% highlight clojure %}  
+{% highlight clojure %}
 (def provider "cloudservers")
 (def user "email")
 (def password "password")
 
-(def my-compute 
+(def my-compute
   (compute-service provider user password :ssh :log4j))
 
 (create-node "webserver" my-compute)
@@ -612,14 +613,14 @@ The above will list all nodes with cloudservers. Here's an example of creating a
 
 You'll likely want to run the following when you're done:
 
-{% highlight clojure %}  
+{% highlight clojure %}
 (destroy-nodes-in-group "webserver" my-compute)
 {% endhighlight %}
 
 ## Tools
 
-We've looked at many tools and chosen a few to spend time integrating with.  
-These tools enable developers to focus on working code, as opposed to  build and infrastructure engineering
+We've looked at many tools and chosen a few to spend time integrating with.
+These tools enable developers to focus on working code, as opposed to build and infrastructure engineering
 
 ### Ant
 

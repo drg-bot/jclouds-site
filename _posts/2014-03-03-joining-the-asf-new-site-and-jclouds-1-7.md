@@ -37,14 +37,14 @@ We have focused on the design and on making the important documentation more acc
 The jclouds 1.7 releases include many new features and some major changes that will be completed in upcoming releases. Here is a summary of the notable changes, but make sure to check the [release notes](/releasenotes/):
 
 * Removed the async interfaces from most of the compute providers. Starting from jclouds 1.7.0, the async interfaces have been deprecated. They provided little value to the project and added a considerable complexity to its maintenance. Users willing to use async features should better configure their own executors and properly handle concurrency in their applications.
-* Updated the `openstack-swift` api. Added several apis and implemented the `BlobStore` abstraction.
-* Added Rackspace Autoscale support.
 * Added support for the [CloudSigma v2 API](https://cloudsigma-docs.readthedocs.org/en/2.10/).
 * Added the [DigitalOcean](https://www.digitalocean.com) provider.
 * Added the [OkHttp](http://square.github.io/okhttp/) HTTP driver for improved HTTP connections.
 * Properly support HTTP PATCH methods.
-* Added OpenStack Trove support.
-* Added OpenStack Neutron v2.0 client.
+* Added Rackspace Autoscale support.
+* Added OpenStack Databases (Trove) and Rackspace Cloud Databases support.
+* Added OpenStack Queuing (Marconi) and Rackspace Cloud Queues support.
+* Added OpenStack Networking (Neutron) v2.0 support.
 * Added support for full Google Compute Engine v1beta16 API
 * Allow `jclouds-chef` to manage custom environments.
 * ... and many more!

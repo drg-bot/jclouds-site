@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Rackspace Cloud: Getting Started Guide"
+permalink: /guides/rackspace/
 ---
 
 1. [Introduction](#intro)
@@ -33,9 +34,9 @@ Likewise you can go to the [Rackspace Cloud (UK)](https://buyonline.rackspace.co
 ## <a id="install"></a>Get jclouds
 
 1. Ensure you are using the [Java Development Kit (JDK) version 6 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-    * `javac -version` 
+    * `javac -version`
 1. Ensure you are using [Maven version 3 or later](http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
-    * `mvn -version` 
+    * `mvn -version`
 1. Create a directory to try out jclouds.
     * `mkdir jclouds`
     * `cd jclouds`
@@ -49,49 +50,52 @@ Likewise you can go to the [Rackspace Cloud (UK)](https://buyonline.rackspace.co
 
 ## <a id="terminology"></a>Terminology
 There are some differences in terminology between jclouds and Rackspace/OpenStack that should be made clear.
-
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>jclouds</th>
-      <th>Rackspace (OpenStack)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Compute</td>
-      <td>Cloud Servers (Nova)</td>
-    </tr>    
-    <tr>
-      <td>Node</td>
-      <td>Server</td>
-    </tr>    
-    <tr>
-      <td>Location/Zone</td>
-      <td>Region</td>
-    </tr>    
-    <tr>
-      <td>Hardware</td>
-      <td>Flavor</td>
-    </tr>    
-    <tr>
-      <td>NodeMetadata</td>
-      <td>Server details</td>
-    </tr>    
-    <tr>
-      <td>UserMetadata</td>
-      <td>Metadata</td>
-    </tr>    
-    <tr>
-      <td>BlobStore</td>
-      <td>Cloud Files (Swift)</td>
-    </tr>    
-    <tr>
-      <td>Blob</td>
-      <td>File (Object)</td>
-    </tr>    
-  </tbody>
-</table>
+<div class="row clearfix">
+  <div class="col-md-4 column">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>jclouds</th>
+          <th>Rackspace (OpenStack)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Compute</td>
+          <td>Cloud Servers (Nova)</td>
+        </tr>
+        <tr>
+          <td>Node</td>
+          <td>Server</td>
+        </tr>
+        <tr>
+          <td>Location/Zone</td>
+          <td>Region</td>
+        </tr>
+        <tr>
+          <td>Hardware</td>
+          <td>Flavor</td>
+        </tr>
+        <tr>
+          <td>NodeMetadata</td>
+          <td>Server details</td>
+        </tr>
+        <tr>
+          <td>UserMetadata</td>
+          <td>Metadata</td>
+        </tr>
+        <tr>
+          <td>BlobStore</td>
+          <td>Cloud Files (Swift)</td>
+        </tr>
+        <tr>
+          <td>Blob</td>
+          <td>File (Object)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 ## <a id="files"></a>Your First Cloud Files App
 ### <a id="files-intro"></a>Introduction
@@ -104,7 +108,7 @@ Cloud Files works with a portable layer in jclouds that is used to access featur
 
 1. The portable API for Cloud Files is org.jclouds.blobstore.BlobStore.
 1. The OpenStack API for Cloud Files is org.jclouds.openstack.swift.CommonSwiftClient.
-1. The Rackspace API for Cloud Files is org.jclouds.cloudfiles.CloudFilesClient. 
+1. The Rackspace API for Cloud Files is org.jclouds.cloudfiles.CloudFilesClient.
 1. You can find these APIs in the latest [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
 
 ### <a id="files-source"></a>The Source Code
@@ -170,7 +174,7 @@ Cloud Servers works with a portable layer in jclouds that is used to access feat
 ### <a id="servers-compile"></a>Compile and Run
 
     javac -classpath ".:lib/*" org/jclouds/examples/rackspace/cloudservers/CloudServersPublish.java
-    
+
     java -classpath ".:lib/*" org.jclouds.examples.rackspace.cloudservers.CloudServersPublish myUsername myApiKey
 
     Create Server
@@ -213,7 +217,7 @@ Cloud Block Storage works with the OpenStack layer in jclouds that is used to ac
 ### <a id="volumes-compile"></a>Compile and Run
 
     javac -classpath ".:lib/*" org/jclouds/examples/rackspace/cloudblockstorage/CreateVolumeAndAttach.java
-    
+
     java -classpath ".:lib/*" org.jclouds.examples.rackspace.cloudblockstorage.CreateVolumeAndAttach myUsername myApiKey
 
     Create Server
@@ -261,7 +265,7 @@ Cloud Load Balancers works with the Rackspace layer in jclouds that is used to a
 ### <a id="loadbalancers-compile"></a>Compile and Run
 
     javac -classpath ".:lib/*" org/jclouds/examples/rackspace/cloudloadbalancers/CreateLoadBalancerWithExistingServers.java
-    
+
     java -classpath ".:lib/*" org.jclouds.examples.rackspace.cloudloadbalancers.CreateLoadBalancerWithExistingServers myUsername myApiKey
 
     Create Cloud Load Balancer
@@ -302,7 +306,7 @@ You can access Cloud Databases with the jclouds openstack-trove API by specifyin
 Note: When providing a java classpath in Windows, the path separator is ';' instead of ':'
 
     javac -classpath ".:lib/*" org/jclouds/examples/rackspace/clouddatabases/CreateInstance.java
-    
+
     java -classpath ".:lib/*" org.jclouds.examples.rackspace.clouddatabases.CreateInstance myUsername myApiKey
 
 ### <a id="databases-advanced"></a>Advanced work with Cloud Databases
@@ -344,7 +348,7 @@ Note: When providing a java classpath in Windows, the path separator is ';' inst
 Note: This uses the API key, not the password.
 
     javac -classpath ".:lib/*" org/jclouds/examples/rackspace/autoscale/CreatePolicy.java
-    
+
     java -classpath ".:lib/*" org.jclouds.examples.rackspace.autoscale.CreatePolicy myUsername myApiKey
 
 ### <a id="autoscale-advanced"></a>Advanced work with Auto Scale
@@ -399,7 +403,7 @@ Cloud Queues works with the OpenStack layer in jclouds that is used to access fe
       Producer 1 Message 1:5
       Consumer 2 Message 1:4 (Queue This Way)
       ...
-      
+
 
 ## <a id="jee"></a>jclouds in a Managed Container
 
@@ -408,7 +412,7 @@ Setting up jclouds to work in a managed container is easy. You simply need to en
 An example code snippet:
 
 {% highlight java %}
-import static com.google.common.util.concurrent.MoreExecutors.sameThreadExecutor; 
+import static com.google.common.util.concurrent.MoreExecutors.sameThreadExecutor;
 
 import org.jclouds.compute.ComputeService;
 import org.jclouds.compute.ComputeServiceContext;
@@ -416,7 +420,7 @@ import org.jclouds.concurrent.config.ExecutorServiceModule;
 
 public class MyJEEClass {
   ...
-  
+
   private void init() {
     Iterable<Module> modules = ImmutableSet.<Module> of(
       new ExecutorServiceModule(sameThreadExecutor(), sameThreadExecutor()));
@@ -427,9 +431,9 @@ public class MyJEEClass {
             .buildView(ComputeServiceContext.class);
       ComputeService compute = context.getComputeService();
   }
-  
+
   ...
-} 
+}
 {% endhighlight %}
 
 ## <a id="next"></a>Next Steps
@@ -438,7 +442,7 @@ public class MyJEEClass {
 1. When you're ready to publish some web pages on the internet, try the [CloudFilesPublish.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudfiles/CloudFilesPublish.java), [CloudServersPublish.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudservers/CloudServersPublish.java), or [CreateLoadBalancerWithNewServers.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudloadbalancers/CreateLoadBalancerWithNewServers.java) examples.
 1. Change the examples to do different things that you want to do.
 1. After running some examples, compare the output with what you see in the [Cloud Control Panel](https://mycloud.rackspace.com/).
-1. Join the [jclouds community](/community/) as either a developer or user. 
+1. Join the [jclouds community](/community/) as either a developer or user.
 
 ## <a id="providers"></a>Rackspace Cloud Providers
 

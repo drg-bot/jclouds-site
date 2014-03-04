@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Using the Abiquo cloud
+permalink: /guides/abiquo-cloud/
 ---
 
 The Abiquo API uses high-level domain objects to perform operations against the Abiquo API. These domain objects provide the necessary functionality to avoid directly consuming the REST API, although this can still be done if needed.
@@ -44,7 +45,7 @@ datacenter.save()
 // Modify the name of the datacenter
 datacenter.setName("Updated Datacenter");
 datacenter.update();
-// Delete the datacenter        
+// Delete the datacenter
 datacenter.delete();
 {% endhighlight %}
 
@@ -76,7 +77,7 @@ finally
 ## Configuring the compute infrastructure
 
 This example shows how to create the physical infrastructure of your cloud. The following code will:
-1. create a **datacenter** 
+1. create a **datacenter**
 2. create a **rack**
 3. connect to a hypervisor
 4. discover hypervisor details
@@ -84,7 +85,7 @@ This example shows how to create the physical infrastructure of your cloud. The 
 
 {% highlight java %}
 // Create a datacenter with the Enterprise Edition features
-Datacenter datacenter = Datacenter.builder(context.getApiContext()    
+Datacenter datacenter = Datacenter.builder(context.getApiContext()
     .name("API datacenter")
     .location("Barcelona")
     .remoteServices("10.60.21.34", AbiquoEdition.ENTERPRISE)
@@ -153,7 +154,7 @@ device.save();
 StoragePool pool = device.findRemoteStoragePool(StoragePoolPredicates.name("abiquo"))
 Tier tier = datacenter.findTier(TierPredicates.name("Gold Storage"));
 pool.setTier(tier);
-    
+
 pool.save();
 
 // At this point the infrastructure is ready with one storage tier and users will be
@@ -255,7 +256,7 @@ Role role =
     context.getAdministrationService().findRole(RolePredicates.name("ENTERPRISE_ADMIN"));
 
 // Create the user with the selected role in the newly created enterprise
-User enterpriseAdmin = User.builder(context.getApiContext(), enterprise, role) 
+User enterpriseAdmin = User.builder(context.getApiContext(), enterprise, role)
     .name("Name", "Surname")       // The name and surname
     .email("username@company.com") // The email address
     .nick("username")              // The login username
@@ -296,7 +297,7 @@ HypervisorType hypervisor =
     .build();
 
 // Create the virtual datacenter
-VirtualDatacenter virtualDatacenter = 
+VirtualDatacenter virtualDatacenter =
     VirtualDatacenter.builder(context.getApiContext(), datacenter, enterprise)
         .name("API virtual datacenter")       // A name for the virtual datacenter
         .cpuCountLimits(18, 20)               // Number of CPUs: Maximum 20, warn when 18 are in use
@@ -358,11 +359,11 @@ VirtualMachine vm = VirtualMachine.builder(context.getApiContext(), vapp, templa
     .ram(128)               // The amount of RAM in MB
     .build();
 vm.save();
- 
+
 // Deploy the virtual machine
 vm.deploy();
 
-// At this point a deployment job has been started asynchronously and the 
+// At this point a deployment job has been started asynchronously and the
 // virtual machine will be deployed in the background
 {% endhighlight %}
 
@@ -461,12 +462,12 @@ VirtualMachine vm = VirtualMachine.builder(context.getApiContext(), vapp, templa
     .ram(2048)              // The amount of RAM in MB
     .build();
 vm.save();
- 
+
 // Create a 2GB extra hard disk and attach it to the virtual machine
 HardDisk disk = HardDisk.builder(context.getApiContext(), vdc).sizeInMb(2048L).build();
 disk.save()
 vm.attachHardDisks(disk);
-    
+
 // Create a 20GB persistent volume and attach it to the virtual machine
 Tier tier = vdc.findStorageTier(TierPredicates.name("Standard storage"));
 Volume volume = Volume.builder(context.getApiContext(), vdc, tier)
@@ -685,7 +686,7 @@ public class VmEventHandler extends AbstractEventHandler<VirtualMachine> {
     /**
      * Async monitors will receive all events, so we need to be careful and handle only the events
      * we are interested in.
-     * 
+     *
      * @param event The populated event. It holds the monitored object in the event.getTarget()
      *            property.
      * @return A boolean indicating if this handler instance must handle the given event.

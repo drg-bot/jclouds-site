@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Go Grid: Getting Started Guide"
+permalink: /guides/go-grid/
 ---
 
 Starting with jclouds 1.0 beta 5, we're supporting [GoGrid](http://www.gogrid.com) cloud provider,
