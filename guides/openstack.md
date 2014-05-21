@@ -16,6 +16,8 @@ permalink: /guides/openstack/
 ## <a id="intro"></a>Introduction
 [OpenStack](http://www.openstack.org/) is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds. The project aims to deliver solutions for all types of clouds by being simple to implement, massively scalable, and feature rich. The technology consists of a series of interrelated projects delivering various components for a cloud infrastructure solution.
 
+TEST TEST TEST
+
 ## <a id="openstack"></a>Get OpenStack
 You can either install a private OpenStack cloud for yourself or use an existing OpenStack public cloud.
 
