@@ -9,6 +9,8 @@ permalink: /reference/logging/
 1. [Enable](#enable)
 1. [HTTP(S) Proxy](#proxy)
 
+#Testing...do not merge
+
 Logging in jclouds can save you time and effort when developing your code or looking for help. If your code is not behaving how you expect it to, enabling and configuring logging in jclouds can quickly give you valuable insight into the root cause of the issue. If you need help from the [community](/community/), the logs can help the people there assist you. The logs can be verbose so it's often best to simply copy and paste them into a [gist](https://gist.github.com/) or [pastie](http://pastie.org/) and just post the link on the mailing list.
 
 By default, jclouds does no logging whatsoever for maximum performance.
